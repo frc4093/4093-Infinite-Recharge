@@ -76,7 +76,7 @@ leftSide = new SpeedControllerGroup(falconFL, falconBL  );
 addChild("leftSide",leftSide);
 
         
-drive = new DifferentialDrive(leftSide,rightSide);
+drive = new DifferentialDrive(leftSide, rightSide);
 addChild("drive",drive);
 drive.setSafetyEnabled(true);
 drive.setExpiration(0.1);
