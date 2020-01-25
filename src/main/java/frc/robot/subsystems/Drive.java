@@ -111,6 +111,7 @@ drive.setMaxOutput(1.0);
         Robot.dash.displayData("RPM BL", getDriveRPM(falconBL));
         Robot.dash.displayData("RPM BR", getDriveRPM(falconBR));
 
+        //For testing
         Robot.dash.displayData("Drive left FPS", getDriveFPS(getDriveRPM(falconFL)));
         Robot.dash.displayData("Drive average", getDriveFPS(getDriveRPM(falconFL),getDriveRPM(falconFR)));
     }
@@ -124,7 +125,7 @@ drive.setMaxOutput(1.0);
     }
     //lets get feet per second
     public double getDriveFPS(double RPM){
-        return (RPM/60);
+        return (0); //this isnt done yet
     }
     public double getDriveFPS(double RPM1, double RPM2){
         double total = RPM1+RPM2;
