@@ -14,9 +14,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Dash  {
 	private int lastTab;
-	public double voltage = 0;
+	public double voltage = 0; //needs to be grabbed from PDP
 	public double l_voltage = 0;
-	public double time = 0;
+	public double time = 0; //Grab from network table?
 	public double l_time = 0;
 	public void Dash(){
 		lastTab = 0;
