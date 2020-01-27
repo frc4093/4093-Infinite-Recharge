@@ -119,10 +119,11 @@ drive.setMaxOutput(1.0);
         // For testing
         Robot.dash.displayData("Drive left FPS", getDriveFPS(falconFL));
 
-        if (count >= 10){
-            Robot.dash.displayData("Gyro Value", getAngle());
-            count = 0;
-        }
+        // if (count >= 10){
+        //     Robot.dash.displayData("Gyro Value", getAngle());
+        //     count = 0;
+        // }
+        //why is there drift?
     }
 
     public double getMotor_RPM(WPI_TalonFX motor) {
