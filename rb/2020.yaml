@@ -372,7 +372,7 @@ Properties:
     validators: null
     value: []
   Java Package: !!robotbuilder.data.properties.StringProperty {default: frc.robot,
-    name: Java Package, validators: null, value: org.usfirst.frc0}
+    name: Java Package, validators: null, value: org.usfirst.frc4093}
   Use Default Java Package: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Use Default Java Package, validators: null, value: true}
   Team Number: !!robotbuilder.data.properties.IntegerProperty {default: 0, name: Team
