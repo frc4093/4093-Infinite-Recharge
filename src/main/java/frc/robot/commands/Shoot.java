@@ -43,6 +43,8 @@ public class Shoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        Robot.shooter.shootAtRPM(Robot.dash.readNumber("shoot RPM setter"));
+        Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
     }
 
     // Make this return true when this Command no longer needs to run execute()
