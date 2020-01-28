@@ -134,7 +134,7 @@ drive.setMaxOutput(1.0);
 
     // lets get feet per second
     public double getDriveFPS(TalonFX motor){
-        return (motor.getSelectedSensorVelocity()*10)*kDriveEncoderToFt;
+        return Math.abs((motor.getSelectedSensorVelocity()*10)*kDriveEncoderToFt);
     }
     public void calGyro(){
         imu.calibrate();
