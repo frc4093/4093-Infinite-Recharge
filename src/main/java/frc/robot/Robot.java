@@ -109,13 +109,11 @@ climb = new Climb();
      */
     @Override
     public void autonomousPeriodic() {
-        motorsOn(true);
         Scheduler.getInstance().run();
     }
 
     @Override
     public void teleopInit() {
-        motorsOn(true);
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
