@@ -120,10 +120,7 @@ drive.setMaxOutput(1.0);
         // For testing
         Robot.dash.displayData("Drive left FPS", getDriveFPS(falconFL));
 
-        // if (count >= 10){
-        //     Robot.dash.displayData("Gyro Value", getAngle());
-        //     count = 0;
-        // }
+        Robot.dash.displayData("Gyro Value", getAngle());
         //why is there drift?
     }
 
@@ -137,7 +134,7 @@ drive.setMaxOutput(1.0);
 
     // lets get feet per second
     public double getDriveFPS(TalonFX motor){
-        return (0);//needs work
+        return (motor.getSelectedSensorVelocity()*10)*kDriveEncoderToFt;
     }
     public void calGyro(){
         imu.calibrate();
