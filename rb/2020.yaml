@@ -160,14 +160,6 @@ Children:
   - Children:
     - Children: []
       Properties:
-        Idle Mode: !!robotbuilder.data.properties.ChoicesProperty
-          choices: [kCoast, kBrake]
-          default: kCoast
-          name: Idle Mode
-          validators: null
-          value: kCoast
-        Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Inverted, validators: null, value: false}
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
           choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
@@ -176,15 +168,7 @@ Children:
           name: CAN ID
           validators: [CANID]
           value: '6'
-        MOTOR TYPE: !!robotbuilder.data.properties.ChoicesProperty
-          choices: [kBrushless, kBrushed]
-          default: kBrushless
-          name: MOTOR TYPE
-          validators: null
-          value: kBrushless
-        Restore Factory Defaults: !!robotbuilder.data.properties.BooleanProperty {
-          default: true, name: Restore Factory Defaults, validators: null, value: true}
-      Base: Spark MAX
+      Base: Victor SPX
       Name: intakeWheels
     - Children: []
       Properties:
