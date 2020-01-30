@@ -38,12 +38,13 @@ public class Shoot extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        Robot.shooter.setRPM(Robot.dash.readNumber("shoot RPM setter"));
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.shooter.shootAtRPM(Robot.dash.readNumber("shoot RPM setter"));
+        Robot.shooter.shootAtRPM();
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
     }
 
@@ -56,11 +57,13 @@ public class Shoot extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+         Robot.shooter.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+        end();
     }
 }

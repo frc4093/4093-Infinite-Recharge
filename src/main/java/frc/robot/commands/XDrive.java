@@ -48,7 +48,7 @@ public class XDrive extends Command {
             //Robot.drive.drive.tankDrive(Robot.oi.getxBoxController().getRawAxis(1),Robot.oi.getxBoxController().getRawAxis(1));
         }else{
             //we seem to have trouble turning at this speed so lets speed up rotate axis
-            Robot.drive.arcade(Robot.oi.getxBoxController().getRawAxis(1)*.7, Robot.oi.getxBoxController().getRawAxis(4)*.8);
+            Robot.drive.arcade(Robot.oi.getxBoxController().getRawAxis(1)*.7, Robot.oi.getxBoxController().getRawAxis(4)*.7);
         }
     }
     
