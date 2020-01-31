@@ -15,48 +15,6 @@ Children:
               default: '2'
               name: CAN ID
               validators: &id002 [CANID]
-              value: '3'
-          Base: Talon FX
-          Name: falconFR
-        - Children: []
-          Properties:
-            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-              choices: *id001
-              default: '2'
-              name: CAN ID
-              validators: *id002
-              value: '2'
-          Base: Talon FX
-          Name: falconBR
-        Properties:
-          MasterSpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
-            default: 0
-            name: MasterSpeedController1
-            type: PIDOutput
-            validators: &id003 [CANSpeedControllerGroup, ChildDropdownSelected]
-            value: falconFR
-          SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
-            default: null, name: SpeedController4, type: PIDOutput, validators: null,
-            value: null}
-          SpeedController3: !!robotbuilder.data.properties.ChildSelectionProperty {
-            default: null, name: SpeedController3, type: PIDOutput, validators: null,
-            value: null}
-          SpeedController2: !!robotbuilder.data.properties.ChildSelectionProperty
-            default: 1
-            name: SpeedController2
-            type: PIDOutput
-            validators: &id004 [CANSpeedControllerGroup, ChildDropdownSelected]
-            value: falconBR
-        Base: CAN Speed Controller Group
-        Name: rightSide
-      - Children:
-        - Children: []
-          Properties:
-            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-              choices: *id001
-              default: '2'
-              name: CAN ID
-              validators: *id002
               value: '1'
           Base: Talon FX
           Name: falconFL
@@ -75,7 +33,7 @@ Children:
             default: 0
             name: MasterSpeedController1
             type: PIDOutput
-            validators: *id003
+            validators: &id003 [CANSpeedControllerGroup, ChildDropdownSelected]
             value: falconFL
           SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
             default: null, name: SpeedController4, type: PIDOutput, validators: null,
@@ -87,17 +45,59 @@ Children:
             default: 1
             name: SpeedController2
             type: PIDOutput
-            validators: *id004
+            validators: &id004 [CANSpeedControllerGroup, ChildDropdownSelected]
             value: falconBL
         Base: CAN Speed Controller Group
         Name: leftSide
+      - Children:
+        - Children: []
+          Properties:
+            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+              choices: *id001
+              default: '2'
+              name: CAN ID
+              validators: *id002
+              value: '3'
+          Base: Talon FX
+          Name: falconFR
+        - Children: []
+          Properties:
+            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+              choices: *id001
+              default: '2'
+              name: CAN ID
+              validators: *id002
+              value: '2'
+          Base: Talon FX
+          Name: falconBR
+        Properties:
+          MasterSpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
+            default: 0
+            name: MasterSpeedController1
+            type: PIDOutput
+            validators: *id003
+            value: falconFR
+          SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
+            default: null, name: SpeedController4, type: PIDOutput, validators: null,
+            value: null}
+          SpeedController3: !!robotbuilder.data.properties.ChildSelectionProperty {
+            default: null, name: SpeedController3, type: PIDOutput, validators: null,
+            value: null}
+          SpeedController2: !!robotbuilder.data.properties.ChildSelectionProperty
+            default: 1
+            name: SpeedController2
+            type: PIDOutput
+            validators: *id004
+            value: falconBR
+        Base: CAN Speed Controller Group
+        Name: rightSide
       Properties:
         Right Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 1
           name: Right Motor
           type: PIDOutput
           validators: [RobotDrive2, ChildDropdownSelected]
-          value: falconBR
+          value: falconFR
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Left Motor: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -105,7 +105,7 @@ Children:
           name: Left Motor
           type: PIDOutput
           validators: [RobotDrive2, ChildDropdownSelected]
-          value: rightSide
+          value: falconFL
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
