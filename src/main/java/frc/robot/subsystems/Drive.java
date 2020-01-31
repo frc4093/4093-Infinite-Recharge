@@ -94,6 +94,9 @@ drive.setMaxOutput(1.0);
     falconFL.setNeutralMode(NeutralMode.Brake);
     falconFR.setNeutralMode(NeutralMode.Brake);
     drive.setDeadband(.05); //Deadband
+    //I am wondering if I should switch to master/follower system
+    //maybe that would make motor features easier to use then group\
+    //voltage comp?
     }
 
     @Override
