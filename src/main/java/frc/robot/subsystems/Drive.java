@@ -64,9 +64,12 @@ falconBR = new WPI_TalonFX(2);
 
 
         
-rightSide = new SpeedControllerGroup(falconFR, falconBR  );
-addChild("rightSide",rightSide);
 
+
+//Set SlaveSpeedControllers to Follow MasterSpeedController
+falconBR.follow(falconFR);
+        
+        
         
 falconFL = new WPI_TalonFX(1);
 
@@ -76,11 +79,14 @@ falconBL = new WPI_TalonFX(4);
 
 
         
-leftSide = new SpeedControllerGroup(falconFL, falconBL  );
-addChild("leftSide",leftSide);
 
+
+//Set SlaveSpeedControllers to Follow MasterSpeedController
+falconBL.follow(falconFL);
         
-drive = new DifferentialDrive(leftSide, rightSide);
+        
+        
+drive = new DifferentialDrive(rightSide, falconBR);
 addChild("drive",drive);
 drive.setSafetyEnabled(true);
 drive.setExpiration(0.1);
@@ -94,8 +100,6 @@ drive.setMaxOutput(1.0);
     falconFL.setNeutralMode(NeutralMode.Brake);
     falconFR.setNeutralMode(NeutralMode.Brake);
     drive.setDeadband(.05); //Deadband
-    //I am wondering if I should switch to master/follower system
-    //maybe that would make motor features easier to use then group\
     //voltage comp?
     }
 
