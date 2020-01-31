@@ -8,7 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
+//we might separate this to intake + indexer if it makes sense too
 package frc.robot.subsystems;
 
 
