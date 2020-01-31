@@ -154,21 +154,85 @@ Children:
         default: []
         name: Constants
         validators: null
-        value: &id005 []
+        value: &id009 []
     Base: Subsystem
     Name: Shooter
   - Children:
-    - Children: []
+    - Children:
+      - Children: []
+        Properties:
+          Idle Mode: !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id005 [kCoast, kBrake]
+            default: kCoast
+            name: Idle Mode
+            validators: null
+            value: kCoast
+          Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+            name: Inverted, validators: null, value: false}
+          CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id006 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+              '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
+              '23', '24', '25', '26', '27', '28', '29', '30', '31']
+            default: '2'
+            name: CAN ID
+            validators: &id007 [CANID]
+            value: '10'
+          MOTOR TYPE: !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id008 [kBrushless, kBrushed]
+            default: kBrushless
+            name: MOTOR TYPE
+            validators: null
+            value: kBrushless
+          Restore Factory Defaults: !!robotbuilder.data.properties.BooleanProperty {
+            default: true, name: Restore Factory Defaults, validators: null, value: true}
+        Base: Spark MAX
+        Name: intakeWheelsSet1
+      - Children: []
+        Properties:
+          Idle Mode: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id005
+            default: kCoast
+            name: Idle Mode
+            validators: null
+            value: kCoast
+          Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+            name: Inverted, validators: null, value: false}
+          CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id006
+            default: '2'
+            name: CAN ID
+            validators: *id007
+            value: '11'
+          MOTOR TYPE: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id008
+            default: kBrushless
+            name: MOTOR TYPE
+            validators: null
+            value: kBrushless
+          Restore Factory Defaults: !!robotbuilder.data.properties.BooleanProperty {
+            default: true, name: Restore Factory Defaults, validators: null, value: true}
+        Base: Spark MAX
+        Name: intakeWheelsSet2
       Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
-            '24', '25', '26', '27', '28', '29', '30', '31']
-          default: '2'
-          name: CAN ID
-          validators: [CANID]
-          value: '6'
-      Base: Victor SPX
+        MasterSpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
+          default: 0
+          name: MasterSpeedController1
+          type: PIDOutput
+          validators: *id003
+          value: intakeWheelsSet1
+        SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
+          default: null, name: SpeedController4, type: PIDOutput, validators: null,
+          value: null}
+        SpeedController3: !!robotbuilder.data.properties.ChildSelectionProperty {
+          default: null, name: SpeedController3, type: PIDOutput, validators: null,
+          value: null}
+        SpeedController2: !!robotbuilder.data.properties.ChildSelectionProperty
+          default: 1
+          name: SpeedController2
+          type: PIDOutput
+          validators: *id004
+          value: intakeWheelsSet2
+      Base: CAN Speed Controller Group
       Name: intakeWheels
     - Children: []
       Properties:
@@ -194,7 +258,7 @@ Children:
         default: []
         name: Constants
         validators: null
-        value: *id005
+        value: *id009
     Base: Subsystem
     Name: Intake
   - Children: []
@@ -212,7 +276,7 @@ Children:
         default: []
         name: Constants
         validators: null
-        value: *id005
+        value: *id009
     Base: Subsystem
     Name: Limelight
   - Children:
