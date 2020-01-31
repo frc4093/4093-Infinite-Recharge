@@ -61,7 +61,7 @@ addChild("PowerDistributionPanel 1",powerDistributionPanel1);
     @Override
     public void periodic() {
         // Put code here to be run every loop
-
+        
     }
     public double getBatteryVoltage(){
         return powerDistributionPanel1.getVoltage();
