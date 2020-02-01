@@ -39,15 +39,14 @@ public class AutoAlign extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        
+        Limelight.setLight(3);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        System.out.println("in Execute");
-        if (/*Limelight.targetInSight()==*/ true){
-            System.out.println("saw target");
+        //needs some kinda proportional control
+        if (Limelight.targetInSight()== true)
             x = Limelight.getTargetAngleX();
             if (Math.abs(x)>2){
                 if (x > 0){
@@ -71,6 +70,7 @@ public class AutoAlign extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        Limelight.setLight(1);
     }
 
     // Called when another command which requires one or more of the same
