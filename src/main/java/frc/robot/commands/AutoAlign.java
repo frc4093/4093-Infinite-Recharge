@@ -48,7 +48,7 @@ public class AutoAlign extends Command {
         //needs some kinda proportional control
         if (Limelight.targetInSight()== true)
             x = Limelight.getTargetAngleX();
-            if (Math.abs(x)>2){
+            if (Math.abs(x)>1){
                 if (x > 0){
                     Robot.drive.arcade(0, .35);
                 }else if(x < 0){
@@ -59,7 +59,6 @@ public class AutoAlign extends Command {
             }
             
         }
-    }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
