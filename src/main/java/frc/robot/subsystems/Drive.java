@@ -124,15 +124,15 @@ drive.setMaxOutput(1.0);
         // Put code here to be run every loop
 
         // this should work
-        Robot.dash.displayData("RPM FL", getDriveRPM(falconFL));
-        Robot.dash.displayData("RPM FR", getDriveRPM(falconFR));
-        Robot.dash.displayData("RPM BL", getDriveRPM(falconBL));
-        Robot.dash.displayData("RPM BR", getDriveRPM(falconBR));
-        count++;
-        // For testing
-        Robot.dash.displayData("Drive left FPS", getDriveFPS(falconFL));
+        // Robot.dash.displayData("RPM FL", getDriveRPM(falconFL));
+        // Robot.dash.displayData("RPM FR", getDriveRPM(falconFR));
+        // Robot.dash.displayData("RPM BL", getDriveRPM(falconBL));
+        // Robot.dash.displayData("RPM BR", getDriveRPM(falconBR));
+        // count++;
+        // // For testing
+        // Robot.dash.displayData("Drive left FPS", getDriveFPS(falconFL));
 
-        Robot.dash.displayData("Gyro Value", getAngle());
+        // Robot.dash.displayData("Gyro Value", getAngle());
         //why is there drift?
     }
 
