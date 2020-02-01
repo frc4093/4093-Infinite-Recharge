@@ -45,14 +45,18 @@ public class AutoAlign extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (Limelight.targetInSight() == true){
+        System.out.println("in Execute");
+        if (/*Limelight.targetInSight()==*/ true){
+            System.out.println("saw target");
             x = Limelight.getTargetAngleX();
             if (Math.abs(x)>2){
                 if (x > 0){
-                    Robot.drive.arcade(0, -.3);
-                }else{
-                    Robot.drive.arcade(0, .3);
+                    Robot.drive.arcade(0, .35);
+                }else if(x < 0){
+                    Robot.drive.arcade(0, -.35);
                 }
+            }else{
+                Robot.drive.arcade(0,0);
             }
             
         }
