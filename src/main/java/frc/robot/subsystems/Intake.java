@@ -71,12 +71,10 @@ conveyor = new WPI_TalonFX(5);
     //basic functionality(for now)
     public void feed(){
         intakeWheels.set(-.5);
-        conveyor.set(-.5);
     }
 
     public void eject(){
         intakeWheels.set(.7);
-        conveyor.set(.5);
     }
     public void stop(){
         intakeWheels.set(0);
