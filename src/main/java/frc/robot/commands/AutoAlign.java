@@ -12,7 +12,7 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Limelight;
+import frc.robot.subsystems.Robot.limelight;
 import frc.robot.subsystems.Drive;
 /**
  *
@@ -39,15 +39,15 @@ public class AutoAlign extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Limelight.setLight(3);
+        Robot.limelight.setLight(3);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         //needs some kinda proportional control
-        if (Limelight.targetInSight()== true)
-            x = Limelight.getTargetAngleX();
+        if (Robot.limelight.targetInSight()== true)
+            x = Robot.limelight.getTargetAngleX();
             if (Math.abs(x)>1){
                 if (x > 0){
                     Robot.drive.arcade(0, .35);
@@ -69,7 +69,7 @@ public class AutoAlign extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Limelight.setLight(1);
+        Robot.limelight.setLight(1);
     }
 
     // Called when another command which requires one or more of the same
