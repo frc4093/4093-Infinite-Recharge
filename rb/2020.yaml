@@ -340,7 +340,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: xBoxController}
+          name: Joystick, validators: null, value: driveGamepad}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -371,7 +371,7 @@ Children:
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: xBoxController}
+          name: Joystick, validators: null, value: driveGamepad}
         Parameters: !!robotbuilder.data.properties.ParametersProperty
           default: []
           name: Parameters
@@ -399,13 +399,23 @@ Children:
       Name: Joystick Button 2
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: ['0', '1', '2', '3', '4', '5']
+        choices: &id011 ['0', '1', '2', '3', '4', '5']
         default: 1
         name: Number
-        validators: [Joystick]
+        validators: &id012 [Joystick]
         value: '0'
     Base: Joystick
-    Name: xBoxController
+    Name: driveGamepad
+  - Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id011
+        default: 1
+        name: Number
+        validators: *id012
+        value: '1'
+    Base: Joystick
+    Name: operatorGamepad
   Properties: {}
   Base: OI
   Name: Operator Interface
