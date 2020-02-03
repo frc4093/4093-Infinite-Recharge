@@ -43,12 +43,11 @@ public class XDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (Robot.oi.getxBoxController().getRawButton(5) || Robot.oi.getxBoxController().getRawButton(6)){
-            Robot.drive.arcade(Robot.oi.getxBoxController().getRawAxis(1), Robot.oi.getxBoxController().getRawAxis(4));
+        if (Robot.oi.getdriveGamepad().getRawButton(5) || Robot.oi.getdriveGamepad().getRawButton(6)){
+            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1), Robot.oi.getdriveGamepad().getRawAxis(4));
             //Robot.drive.drive.tankDrive(Robot.oi.getxBoxController().getRawAxis(1),Robot.oi.getxBoxController().getRawAxis(1));
         }else{
-            //we seem to have trouble turning at this speed so lets speed up rotate axis
-            Robot.drive.arcade(Robot.oi.getxBoxController().getRawAxis(1)*.6, Robot.oi.getxBoxController().getRawAxis(4)*.5);
+            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1)*.6, Robot.oi.getdriveGamepad().getRawAxis(4)*.5);
         }
     }
     
