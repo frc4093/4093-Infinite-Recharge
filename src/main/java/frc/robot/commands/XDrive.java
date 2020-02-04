@@ -50,20 +50,21 @@ public class XDrive extends Command {
     @Override
     protected void execute() {
         //switch direction
+        lY = Robot.oi.getdriveGamepad().getRawAxis(1);
+        lX = Robot.oi.getdriveGamepad().getRawAxis(0);
+        rY = Robot.oi.getdriveGamepad().getRawAxis(5);
+        rX = Robot.oi.getdriveGamepad().getRawAxis(4);
         if (Math.abs(lY)>Math.abs(rY)){
             drive = lY;
         }else{
             drive = -rY;
         }
-        if (Math.abs(rX)>Math.abs(lX)){
-            turn = rX;
+        if (Math.abs(lX)>Math.abs(rX)){
+            turn = lX;
         }else{
-            turn = -rX;
+            turn = rX;
         }
-        lX = Robot.oi.getdriveGamepad().getX(Hand.kLeft);
-        lY = Robot.oi.getdriveGamepad().getY(Hand.kRight);
-        rY = Robot.oi.getdriveGamepad().getY(Hand.kRight);
-        rX = Robot.oi.getdriveGamepad().getX(Hand.kRight);
+        
 
         if (Robot.oi.getdriveGamepad().getRawButton(5) || Robot.oi.getdriveGamepad().getRawButton(6)){
             Robot.drive.arcade(drive, turn*.6);
