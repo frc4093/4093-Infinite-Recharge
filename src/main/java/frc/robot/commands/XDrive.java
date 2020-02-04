@@ -44,7 +44,7 @@ public class XDrive extends Command {
     @Override
     protected void execute() {
         if (Robot.oi.getdriveGamepad().getRawButton(5) || Robot.oi.getdriveGamepad().getRawButton(6)){
-            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1), Robot.oi.getdriveGamepad().getRawAxis(4));
+            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1), Robot.oi.getdriveGamepad().getRawAxis(4)*.6);
             //Robot.drive.drive.tankDrive(Robot.oi.getxBoxController().getRawAxis(1),Robot.oi.getxBoxController().getRawAxis(1));
         }else{
             Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1)*.6, Robot.oi.getdriveGamepad().getRawAxis(4)*.5);
