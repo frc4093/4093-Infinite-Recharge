@@ -48,7 +48,8 @@ public class AutoAlign extends Command {
     protected void execute() {
         //needs some kinda proportional control
         
-        if (Robot.limelight.targetInSight()== true)
+        if (Robot.limelight.targetInSight()== true){
+
             x = Robot.limelight.getTargetAngleX();
             absX = Math.abs(x);
             double adjust = (x/27)*.25;
@@ -61,6 +62,9 @@ public class AutoAlign extends Command {
             }else{
                 Robot.drive.arcade(0,0);
             }
+        }else{
+            Robot.drive.arcade(0, .45);
+        }
             
         }
 

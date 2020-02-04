@@ -10,14 +10,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * Toggle from hatch to cargo
  * speed
  * encoder
- * all Still on 2019 dash
+ * voltage(can display easily from shuffleboard)
  */
 public class Dash  {
 	private int lastTab;
-	public double voltage = 0; //needs to be grabbed from PDP
-	public double l_voltage = 0;
-	public double time = 0; //Grab from network table?
-	public double l_time = 0;
 	public void Dash(){
 		lastTab = 0;
 // erik
@@ -44,24 +40,10 @@ public class Dash  {
     }
 	public void updateDashBoard(){
 		//check if change is actually needed to preserve cpu
-		if (time != l_time){
-			l_time = time;
-			showMatchTime();
-		}
-		if (voltage != l_voltage){
-			l_voltage = voltage;
-			showVoltage();
-		}
-			
+		//nothing here for 2020 yet
 	}
 	public void changeTab(final int tab){
 		Shuffleboard.selectTab(tab); //switch to tab
 		lastTab = tab;
-	}
-	public void showMatchTime(){
-		displayData("Match Time", time);
-	}
-	public void showVoltage(){
-		displayData("Voltage", voltage);
 	}
 }

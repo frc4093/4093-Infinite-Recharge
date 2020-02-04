@@ -10,6 +10,8 @@
 
 
 package frc.robot.commands;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
@@ -44,6 +46,8 @@ public class Run_Intake extends Command {
     @Override
     protected void execute() {
         Robot.intake.feed();
+        Robot.indexer.runUp();
+        Robot.shooter.setShooter(ControlMode.PercentOutput,.7);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -56,11 +60,14 @@ public class Run_Intake extends Command {
     @Override
     protected void end() {
         Robot.intake.stop();
+        Robot.indexer.stop();
+        Robot.shooter.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+        end();
     }
 }
