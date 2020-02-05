@@ -45,6 +45,7 @@ public class Run_Intake extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        //just run everything for testing were doing
         Robot.intake.feed();
         Robot.indexer.runUp();
         Robot.shooter.setShooter(ControlMode.PercentOutput,.5);
