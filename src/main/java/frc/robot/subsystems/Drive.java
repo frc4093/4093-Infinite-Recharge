@@ -157,6 +157,9 @@ drive.setMaxOutput(1.0);
     public double getAngle(){
         return imu.getAngle();
     }
+    public double getAngle360(){
+        return 0; //gotta figure out math...
+    }
 
     //sort of rough methods for autonomous use
     public void resetEnc(){

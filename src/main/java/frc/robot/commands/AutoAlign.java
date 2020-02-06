@@ -12,7 +12,7 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Drive;
+import frc.robot.commands.*;
 /**
  *
  */
@@ -65,6 +65,7 @@ public class AutoAlign extends Command {
             }
         }else{
             Robot.drive.arcade(0, 0);
+            Robot.oi.setOperatorRumble(.5, .5);
         }
             
         }
@@ -80,6 +81,7 @@ public class AutoAlign extends Command {
     protected void end() {
         Robot.limelight.setLight(1);
         Robot.limelight.setMode(1);
+        Robot.oi.setOperatorRumble(0, 0);
     }
 
     // Called when another command which requires one or more of the same
