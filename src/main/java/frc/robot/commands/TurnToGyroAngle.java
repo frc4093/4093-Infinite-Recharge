@@ -47,15 +47,14 @@ public class TurnToGyroAngle extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        correctedDriveAngle = Robot.drive.getAngle()%360;
-        
+        correctedDriveAngle = Robot.drive.getAngle360();
         extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/360)*.65;
         if (correctedDriveAngle > m_angle+offset || correctedDriveAngle < m_angle-offset ){
             count = 0; //reset count
             if (m_angle>correctedDriveAngle){
-                Robot.drive.arcade(0, .35+extraSpeed);
+                Robot.drive.arcade(0, .1+extraSpeed,false);
             }else{
-                Robot.drive.arcade(0, -.35+extraSpeed);
+                Robot.drive.arcade(0, -.1+extraSpeed,false);
             }
             
         }else{

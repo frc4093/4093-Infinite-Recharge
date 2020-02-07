@@ -161,7 +161,14 @@ drive.setMaxOutput(1.0);
         return imu.getAngle();
     }
     public double getAngle360(){
-        return getAngle()%360; 
+        double step1 = getAngle()%360;
+        double step2;
+        if (step1<0){
+            step2 = 360-step1;
+        }else{
+            step2 = step1;
+        }
+        return step2; 
     }
 
     //sort of rough methods for autonomous use

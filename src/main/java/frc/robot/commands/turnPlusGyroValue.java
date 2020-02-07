@@ -55,9 +55,9 @@ public class turnPlusGyroValue extends Command {
         if (Robot.drive.getAngle() > addedAngle+offset || Robot.drive.getAngle() < addedAngle-offset ){
             count = 0; //reset count
             if (addedAngle>Robot.drive.getAngle()){
-                Robot.drive.arcade(0, .35+extraSpeed);
+                Robot.drive.arcade(0, .1+extraSpeed,false);
             }else{
-                Robot.drive.arcade(0, -.35+extraSpeed);
+                Robot.drive.arcade(0, -.1+extraSpeed,false);
             }
             
         }else{
