@@ -117,6 +117,9 @@ drive.setMaxOutput(1.0);
     public void arcade(double xSpeed, double zRotation) {
         drive.arcadeDrive(xSpeed, zRotation);
     }
+    public void arcade(double xSpeed, double zRotation, boolean squaredInputs){
+        drive.arcadeDrive(xSpeed, zRotation,squaredInputs);
+    }
 
     @Override
     public void periodic() {
@@ -130,8 +133,8 @@ drive.setMaxOutput(1.0);
         // count++;
         // // For testing
         // Robot.dash.displayData("Drive left FPS", getDriveFPS(falconFL));
-
-        // Robot.dash.displayData("Gyro Value", getAngle());
+        Robot.dash.displayData("Corrected val", getAngle360());
+        Robot.dash.displayData("Gyro Value", getAngle());
         //why is there drift?
     }
 
@@ -158,7 +161,7 @@ drive.setMaxOutput(1.0);
         return imu.getAngle();
     }
     public double getAngle360(){
-        return 0; //gotta figure out math...
+        return getAngle()%360; 
     }
 
     //sort of rough methods for autonomous use

@@ -94,7 +94,8 @@ controlPanel = new ControlPanel();
      */
     @Override
     public void disabledInit(){
-
+        limelight.setLight(1); //wouldnt work in robotinit?
+        limelight.setMode(1);
     }
 
     @Override

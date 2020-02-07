@@ -70,7 +70,7 @@ public class XDrive extends Command {
             Robot.drive.arcade(drive, turn*.6);
             //Robot.drive.drive.tankDrive(Robot.oi.getxBoxController().getRawAxis(1),Robot.oi.getxBoxController().getRawAxis(1));
         }else{
-            Robot.drive.arcade(drive*.6, turn*.5);
+            Robot.drive.arcade(drive*.5, turn*.3,false);
         }
         
 

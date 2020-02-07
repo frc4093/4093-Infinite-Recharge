@@ -69,7 +69,7 @@ public Joystick operatorGamepad;
 operatorGamepad = new Joystick(1);
 
 joystickButton7 = new JoystickButton(operatorGamepad, 6);
-joystickButton7.whileHeld(new TurnToGyroAngle(90));
+joystickButton7.whenPressed(new TurnToGyroAngle(90));
 joystickButton1 = new JoystickButton(operatorGamepad, 1);
 joystickButton1.whileHeld(new Shoot());
 joystickButton3 = new JoystickButton(operatorGamepad, 3);
