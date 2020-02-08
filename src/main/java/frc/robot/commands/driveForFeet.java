@@ -50,9 +50,9 @@ public class driveForFeet extends Command {
     protected void execute() {
         error = Math.abs(m_ft) - Math.abs(Robot.drive.getFeetMovedFromEnc());
         if (m_ft > 0)
-            Robot.drive.arcade(-.1-kP*error, 0,false);
+            Robot.drive.arcade(-.15-kP*error, 0,false);
         if (m_ft < 0)
-            Robot.drive.arcade(.1+kP*error, 0,false);
+            Robot.drive.arcade(.15+kP*error, 0,false);
     }
 
     // Make this return true when this Command no longer needs to run execute()

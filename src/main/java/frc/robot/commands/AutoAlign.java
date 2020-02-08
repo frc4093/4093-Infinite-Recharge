@@ -55,16 +55,17 @@ public class AutoAlign extends Command {
             x = Robot.limelight.getTargetAngleX();
             absX = Math.abs(x);
             double adjust = (x/27)*.25;
+            double y = Robot.oi.getdriveGamepad().getRawAxis(1)*.6;
             if (absX>.8){
                 if (x > 0){
                     //System.out.println(.32+adjust);
-                    Robot.drive.arcade(0, .1+adjust,false);
+                    Robot.drive.arcade(y, .12+adjust,false);
                 }else if(x < 0){
-                    Robot.drive.arcade(0, -.1+adjust,false);
+                    Robot.drive.arcade(y, -.12+adjust,false);
                     //System.out.println(-.32+adjust);
                 }
         }else{
-            Robot.drive.arcade(0, 0);
+            Robot.drive.arcade(y, 0);
             //Robot.oi.setOperatorRumble(.5, .5);
         }
     }else{

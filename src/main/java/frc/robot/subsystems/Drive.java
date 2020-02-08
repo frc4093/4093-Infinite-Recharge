@@ -164,7 +164,7 @@ drive.setMaxOutput(1.0);
         double step1 = getAngle()%360;
         double step2;
         if (step1<0){
-            step2 = 360-step1;
+            step2 = 360+step1; //subtracting value from 360(its negative so technically adding)
         }else{
             step2 = step1;
         }
