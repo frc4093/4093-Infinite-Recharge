@@ -48,7 +48,7 @@ public class Run_Intake extends Command {
         //just run everything for testing were doing
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
         Robot.intake.feed();
-        Robot.indexer.runUp();
+        //Robot.indexer.runUp();
         Robot.shooter.setShooter(ControlMode.PercentOutput,.5);
     }
 
