@@ -47,15 +47,13 @@ public class AutoAlign extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     @Override
-    protected void execute() {
-        //needs some kinda proportional control
-        
+    protected void execute() {        
         if (Robot.limelight.targetInSight()== true){
 
             x = Robot.limelight.getTargetAngleX();
             absX = Math.abs(x);
             double adjust = (x/27)*.25;
-            double y = Robot.oi.getdriveGamepad().getRawAxis(1)*.6;
+            double y = Robot.oi.getdriveGamepad().getRawAxis(1)*.6; //may or may not keep this
             if (absX>.8){
                 if (x > 0){
                     //System.out.println(.32+adjust);
