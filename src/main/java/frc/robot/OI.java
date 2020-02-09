@@ -106,7 +106,6 @@ joystickButton2.whileHeld(new AutoAlign());
         SmartDashboard.putData("SixBallAutoLT", new SixBallAutoLT());
         SmartDashboard.putData("TargetPosAuto", new TargetPosAuto());
         SmartDashboard.putData("SixBallAutoRT", new SixBallAutoRT());
-        SmartDashboard.putData("DoNothingFor_AutoCommand", new DoNothingFor_AutoCommand());
         SmartDashboard.putData("UniversalShootAuto", new UniversalShootAuto());
         SmartDashboard.putData("shootAtRPM", new shootAtRPM());
 
