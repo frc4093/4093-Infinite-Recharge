@@ -170,7 +170,7 @@ Children:
             validators: &id006 [CANID]
             value: '6'
         Base: Victor SPX
-        Name: Victor SPX 2
+        Name: wheel1
       - Children: []
         Properties:
           CAN ID: !!robotbuilder.data.properties.ChoicesProperty
@@ -180,14 +180,14 @@ Children:
             validators: *id006
             value: '0'
         Base: Victor SPX
-        Name: Victor SPX 1
+        Name: wheel2
       Properties:
         MasterSpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 0
           name: MasterSpeedController1
           type: PIDOutput
           validators: *id003
-          value: Victor SPX 2
+          value: wheel1
         SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
           default: null, name: SpeedController4, type: PIDOutput, validators: null,
           value: null}
@@ -199,9 +199,19 @@ Children:
           name: SpeedController2
           type: PIDOutput
           validators: *id004
-          value: Victor SPX 1
+          value: wheel2
       Base: CAN Speed Controller Group
       Name: intakeWheels
+    - Children: []
+      Properties:
+        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id005
+          default: '2'
+          name: CAN ID
+          validators: *id006
+          value: '10'
+      Base: Victor SPX
+      Name: Auger
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -1140,10 +1150,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Shooter}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id014 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id014
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command

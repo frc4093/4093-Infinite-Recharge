@@ -49,6 +49,7 @@ public class Run_Intake extends Command {
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
         Robot.intake.feed();
         //Robot.indexer.runUp();
+        Robot.intake.runAuger();
         Robot.shooter.setShooter(ControlMode.PercentOutput,.5);
     }
 
@@ -62,7 +63,7 @@ public class Run_Intake extends Command {
     @Override
     protected void end() {
         Robot.intake.stop();
-        Robot.indexer.stop();
+        //Robot.indexer.stop();
         Robot.shooter.stop();
     }
 
