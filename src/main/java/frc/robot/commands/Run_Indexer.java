@@ -16,7 +16,7 @@ import frc.robot.Robot;
 /**
  *
  */
-public class Manual_Index extends Command {
+public class Run_Indexer extends Command {
     double originalPos;
     double newPos;
     double rotations = .5;
