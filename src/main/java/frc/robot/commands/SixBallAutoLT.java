@@ -47,7 +47,7 @@ public class SixBallAutoLT extends CommandGroup {
         /**
          * this will shoot 3 balls
          * then grab 3 from trench
-         * then shoot them
+         * then shoot them from trench
          * */
     } 
 }
