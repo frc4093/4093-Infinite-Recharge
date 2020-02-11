@@ -53,6 +53,7 @@ public static ControlPanel controlPanel;
     public static double mode;
 public static Dash dash = new Dash();
     public int ballCounter = 0; //were not quite here yet but this will be needed
+    public static boolean isAuto; 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -107,6 +108,7 @@ controlPanel = new ControlPanel();
     @Override
     public void autonomousInit() {
         autonomousCommand = chooser.getSelected();
+        isAuto = true;
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
@@ -125,6 +127,7 @@ controlPanel = new ControlPanel();
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
+        isAuto = false;
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
@@ -134,5 +137,8 @@ controlPanel = new ControlPanel();
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+    }
+    public static boolean getAuto(){
+        return isAuto;
     }
 }
