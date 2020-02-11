@@ -120,6 +120,9 @@ drive.setMaxOutput(1.0);
     public void arcade(double xSpeed, double zRotation, boolean squaredInputs){
         drive.arcadeDrive(xSpeed, zRotation,squaredInputs);
     }
+    public void tank(double left, double right,boolean squaredInputs){
+        drive.tankDrive(left, right,squaredInputs);
+    }
 
     @Override
     public void periodic() {
