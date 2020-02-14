@@ -92,7 +92,7 @@ joystickButton2.whileHeld(new AutoAlign());
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("XDrive", new XDrive());
         SmartDashboard.putData("Shoot", new Shoot());
-        SmartDashboard.putData("ShootWithPID", new ShootWithPID());
+        SmartDashboard.putData("ShootPID", new ShootPID(3000));
         SmartDashboard.putData("Run_Intake", new Run_Intake());
         SmartDashboard.putData("Do_Climb", new Do_Climb());
         SmartDashboard.putData("StopShooter", new StopShooter());
