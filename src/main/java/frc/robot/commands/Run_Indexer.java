@@ -41,7 +41,7 @@ public class Run_Indexer extends Command {
     @Override
     protected void initialize() {
         originalPos = Robot.indexer.getpos();
-        newPos = originalPos-6*(2048);
+        newPos = originalPos+6*(2048);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -55,7 +55,7 @@ public class Run_Indexer extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return (Robot.indexer.getpos()<newPos);
+        return (Robot.indexer.getpos()>=newPos);
     }
 
     // Called once after isFinished returns true

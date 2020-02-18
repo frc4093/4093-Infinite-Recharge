@@ -38,12 +38,15 @@ public class Shoot extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.shooter.setRPM(Robot.dash.readNumber("shoot RPM setter"));
+        Robot.dash.displayData("shoot RPM setter", 0);
+        Robot.shooter.setPowerLevel(0);
+        Robot.shooter.setRPM(2000);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        //Robot.shooter.setRPM(Robot.dash.readNumber("shoot RPM setter"));
         Robot.shooter.shootAtRPM();
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
     }

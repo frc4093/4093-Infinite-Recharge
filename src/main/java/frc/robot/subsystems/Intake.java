@@ -44,7 +44,7 @@ wheel1 = new WPI_VictorSPX(6);
 
 
         
-wheel2 = new WPI_VictorSPX(0);
+wheel2 = new WPI_VictorSPX(5);
 
 
         

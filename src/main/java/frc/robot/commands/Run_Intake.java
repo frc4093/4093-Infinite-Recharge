@@ -50,7 +50,7 @@ public class Run_Intake extends Command {
         Robot.intake.feed();
         //Robot.indexer.runUp();
         Robot.intake.runAuger();
-        Robot.shooter.setShooter(ControlMode.PercentOutput,.5);
+        Robot.shooter.setShooter(ControlMode.PercentOutput,.75);
     }
 
     // Make this return true when this Command no longer needs to run execute()
