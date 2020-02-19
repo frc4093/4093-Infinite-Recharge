@@ -457,7 +457,7 @@ Children:
           name: Command
           type: Command
           validators: *id009
-          value: Shoot
+          value: Start_Shooter
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id010
           default: whileHeld
@@ -748,7 +748,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: Shoot
+    Name: Start_Shooter
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
