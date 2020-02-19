@@ -76,7 +76,7 @@ shootOneA = new JoystickButton(operatorGamepad, 1);
 shootOneA.whenPressed(new Run_Indexer());
 stopIntake7 = new JoystickButton(operatorGamepad, 7);
 stopIntake7.whenPressed(new Stop_Intake());
-startIntake8 = new JoystickButton(operatorGamepad, 6);
+startIntake8 = new JoystickButton(operatorGamepad, 8);
 startIntake8.whenPressed(new Run_Intake());
 runIntakeWhileHeldY = new JoystickButton(operatorGamepad, 4);
 runIntakeWhileHeldY.whileHeld(new Run_Intake());
@@ -85,7 +85,7 @@ autoAlignX.whileHeld(new AutoAlign());
 stopShooterLB = new JoystickButton(operatorGamepad, 5);
 stopShooterLB.whenPressed(new StopShooter());
 startShooterRB = new JoystickButton(operatorGamepad, 6);
-startShooterRB.whileHeld(new Shoot());
+startShooterRB.whenPressed(new Shoot(0));
 driveGamepad = new Joystick(0);
 
 xButtonAutoAlign = new JoystickButton(driveGamepad, 3);
@@ -97,7 +97,7 @@ bButtonAutoAlign.whileHeld(new AutoAlign());
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("XDrive", new XDrive());
-        SmartDashboard.putData("Shoot", new Shoot());
+        SmartDashboard.putData("Shoot", new Shoot(2000));
         SmartDashboard.putData("Run_Intake", new Run_Intake());
         SmartDashboard.putData("Do_Climb", new Do_Climb());
         SmartDashboard.putData("StopShooter", new StopShooter());

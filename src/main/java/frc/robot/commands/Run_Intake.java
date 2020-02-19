@@ -46,11 +46,9 @@ public class Run_Intake extends Command {
     @Override
     protected void execute() {
         //just run everything for testing were doing
-        Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
         Robot.intake.feed();
         //Robot.indexer.runUp();
         Robot.intake.runAuger();
-        Robot.shooter.setShooter(ControlMode.PercentOutput,.75);
     }
 
     // Make this return true when this Command no longer needs to run execute()
