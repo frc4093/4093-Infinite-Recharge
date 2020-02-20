@@ -39,8 +39,7 @@ public class Dash  {
         return SmartDashboard.getString(key,"Default");
     }
 	public void updateDashBoard(){
-		//check if change is actually needed to preserve cpu
-		//nothing here for 2020 yet
+		//nothing needed this year
 	}
 	public void changeTab(final int tab){
 		Shuffleboard.selectTab(tab); //switch to tab

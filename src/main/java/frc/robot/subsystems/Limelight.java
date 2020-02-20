@@ -85,7 +85,7 @@ public class Limelight extends Subsystem {
         LED = ll.getEntry("ledMode");
         camMode = ll.getEntry("camMode");
         setLight(LEDMode.OFF);
-        setMode(CamMode.DRIVER);
+        setCameraMode(CamMode.DRIVER);
     }
 
     @Override
@@ -112,16 +112,16 @@ public class Limelight extends Subsystem {
         return tx.getDouble(0.0); //get X angle off network table
     }
     public double getTargetAngleY(){
-        return ty.getDouble(0.0);
+        return ty.getDouble(0.0); //get Y off network table
     }
     public double getTargetArea(){
-        return ta.getDouble(0.0);
+        return ta.getDouble(0.0); //get target area off network table
     }
     public void setLight(LEDMode v){
-        LED.setNumber(v.getMode());
+        LED.setNumber(v.getMode()); //set LED mode
     }
-    public void setMode(CamMode v){
-        camMode.setNumber(v.getMode());
+    public void setCameraMode(CamMode v){
+        camMode.setNumber(v.getMode()); //set camera mode
     }
     public double getDistance(){
         //see http://docs.limelightvision.io/en/latest/cs_estimating_distance.html
@@ -130,7 +130,7 @@ public class Limelight extends Subsystem {
          * h1 = height of camera above floor
          * h2 = height of target
          * a1 = mounting angle
-         * a2 = y aangle of target
+         * a2 = y angle of target
          * d = distance
          * 
          * tan(a1+a2) = (h2-h1) / d

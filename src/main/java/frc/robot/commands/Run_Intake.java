@@ -47,7 +47,6 @@ public class Run_Intake extends Command {
     protected void execute() {
         //just run everything for testing were doing
         Robot.intake.feed();
-        //Robot.indexer.runUp();
         Robot.intake.runAuger();
     }
 
@@ -61,7 +60,6 @@ public class Run_Intake extends Command {
     @Override
     protected void end() {
         Robot.intake.stop();
-        //Robot.indexer.stop();
         Robot.shooter.stop();
     }
 

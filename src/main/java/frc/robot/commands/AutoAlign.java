@@ -47,7 +47,7 @@ public class AutoAlign extends Command {
     @Override
     protected void initialize() {
         Robot.limelight.setLight(LEDMode.ON);
-        Robot.limelight.setMode(CamMode.VISION);
+        Robot.limelight.setCameraMode(CamMode.VISION);
         count = 0;
     }
 
@@ -58,7 +58,7 @@ public class AutoAlign extends Command {
 
             x = Robot.limelight.getTargetAngleX();
             absX = Math.abs(x);
-            double adjust = (x/27)*.25;
+            double adjust = (x/29.8)*.25;
             double y = Robot.oi.getdriveGamepad().getRawAxis(1)*.6; //may or may not keep this
             if (absX>.8){
                 if (x > 0){
@@ -93,7 +93,7 @@ public class AutoAlign extends Command {
     @Override
     protected void end() {
         Robot.limelight.setLight(LEDMode.OFF);
-        Robot.limelight.setMode(CamMode.DRIVER);
+        Robot.limelight.setCameraMode(CamMode.DRIVER);
         Robot.oi.setOperatorRumble(0, 0);
     }
 
