@@ -48,6 +48,7 @@ public class AutomatedShoot extends CommandGroup {
             addSequential(new Start_Shooter(3000));
         }
         addSequential(new PrepareBallForShoot());
-        addSequential(new Run_Indexer());
+        addSequential(new WaitForShooterSpeed()); //waits for shooter to get up to speed
+        addSequential(new Run_Indexer()); //basically shoots
     } 
 }

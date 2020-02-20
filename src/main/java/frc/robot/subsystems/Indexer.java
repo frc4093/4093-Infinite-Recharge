@@ -12,6 +12,7 @@
 package frc.robot.subsystems;
 
 
+import frc.robot.Robot;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -97,7 +98,14 @@ conveyor = new WPI_TalonFX(0);
             return -1;
         }
     }
-    
+    //unfinished
+    public boolean isFull(){
+        return false; //not sure how we will work this yet
+    }
+    //unfinished
+    public int countGuess(){
+        return 0; 
+    }
     public boolean ballInDesiredPosition(){
         return (getDistance(Unit.kMillimeters)<desiredDistance);
     }
