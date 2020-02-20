@@ -10,9 +10,13 @@
 
 package frc.robot.commands;
 
+import com.ctre.phoenix.CANifier.LEDChannel;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.commands.*;
+import frc.robot.subsystems.Limelight.CamMode;
+import frc.robot.subsystems.Limelight.LEDMode;
 
 /**
  *
@@ -42,8 +46,8 @@ public class AutoAlign extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.limelight.setLight(3);
-        Robot.limelight.setMode(0);
+        Robot.limelight.setLight(LEDMode.ON);
+        Robot.limelight.setMode(CamMode.VISION);
         count = 0;
     }
 
@@ -88,8 +92,8 @@ public class AutoAlign extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Robot.limelight.setLight(1);
-        Robot.limelight.setMode(1);
+        Robot.limelight.setLight(LEDMode.OFF);
+        Robot.limelight.setMode(CamMode.DRIVER);
         Robot.oi.setOperatorRumble(0, 0);
     }
 

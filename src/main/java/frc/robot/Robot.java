@@ -95,14 +95,11 @@ controlPanel = new ControlPanel();
      */
     @Override
     public void disabledInit(){
-        limelight.setLight(1); //wouldnt work in robotinit?
-        limelight.setMode(1);
     }
 
     @Override
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
-        limelight.setLight(1); //wouldnt work in robotinit?
     }
 
     @Override

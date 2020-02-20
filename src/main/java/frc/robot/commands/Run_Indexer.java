@@ -40,14 +40,18 @@ public class Run_Indexer extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        setTimeout(3); //it shouldnt take too long
         originalPos = Robot.indexer.getpos();
-        newPos = originalPos+6*(2048);
+        newPos = originalPos+2*(2048);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.indexer.runUp();
+        if (Robot.shooter.isReady()){
+            Robot.indexer.runUp();
+        }
+        
         Robot.dash.displayData("R", Robot.indexer.getpos());
         Robot.dash.displayData("RP", Robot.indexer.getpos());
     }
@@ -55,7 +59,7 @@ public class Run_Indexer extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return (Robot.indexer.getpos()>=newPos);
+        return (Robot.indexer.getpos()>=newPos || isTimedOut());
     }
 
     // Called once after isFinished returns true
