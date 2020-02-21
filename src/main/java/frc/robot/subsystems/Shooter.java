@@ -169,7 +169,7 @@ shooterFalcon = new WPI_TalonFX(7);
     }
     public boolean isReady(){
         //we need to make sure shooter is spinning before we shoot
-        if (getShooter_RPM()>setRPM-60 & !(getShooter_RPM()<500)){
+        if ((getShooter_RPM()>setRPM-60 & getShooter_RPM()<setRPM+60) & !(getShooter_RPM()<500)){
             return true;
         }
         return false;

@@ -86,7 +86,8 @@ public class AutoAlign extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return (count>10);
+        //could be better work around for driver align is rough
+        return (count>10)&&!((Robot.oi.getdriveGamepad().getRawButton(2))||Robot.oi.getoperatorGamepad().getRawButton(3)||Robot.oi.getdriveGamepad().getRawButton(3));
     }
 
     // Called once after isFinished returns true

@@ -25,6 +25,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
+import frc.robot.subsystems.Limelight.CamMode;
+import frc.robot.subsystems.Limelight.LEDMode;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -98,6 +100,8 @@ controlPanel = new ControlPanel();
      */
     @Override
     public void disabledInit(){
+        Robot.limelight.setCameraMode(CamMode.DRIVER);
+        Robot.limelight.setLight(LEDMode.OFF);
     }
 
     @Override
@@ -119,6 +123,8 @@ controlPanel = new ControlPanel();
     @Override
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        Robot.limelight.setCameraMode(CamMode.DRIVER);
+        Robot.limelight.setLight(LEDMode.OFF);
     }
 
     @Override
@@ -129,6 +135,7 @@ controlPanel = new ControlPanel();
         // this line or comment it out.
         isAuto = false;
         if (autonomousCommand != null) autonomousCommand.cancel();
+        Robot.dash.displayData("RPM Force set", 0);
     }
 
     /**
@@ -137,6 +144,7 @@ controlPanel = new ControlPanel();
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        Robot.shooter.setRPM(Robot.dash.readNumber("RPM Force set"));
     }
     public static boolean getAuto(){
         return isAuto;

@@ -37,9 +37,11 @@ public class Start_Shooter extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.dash.displayData("shoot RPM setter", 0);
         //Robot.shooter.setPowerLevel(0);
         Robot.shooter.setRPM(m_RPM);
+        if (Robot.dash.readNumber("RPM force set") !=0){
+            Robot.shooter.setRPM(Robot.dash.readNumber("RPM force set"));
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -48,17 +50,18 @@ public class Start_Shooter extends Command {
         //Robot.shooter.setRPM(Robot.dash.readNumber("shoot RPM setter"));
         Robot.shooter.shootAtRPM();
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
-        if (Robot.shooter.isReady()){
-            count++;
-        }else{
-            count = 0;
-        }
+        // if (Robot.shooter.isReady()){
+        //     count++;
+        // }else{
+        //     count = 0;
+        // }
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return count>5;
+        return false;
+        //return count>5;//count>5;
     }
 
     // Called once after isFinished returns true

@@ -45,9 +45,7 @@ public class Run_Intake extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        //just run everything for testing were doing
         Robot.intake.feed();
-        Robot.intake.runAuger();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -60,7 +58,6 @@ public class Run_Intake extends Command {
     @Override
     protected void end() {
         Robot.intake.stop();
-        Robot.shooter.stop();
     }
 
     // Called when another command which requires one or more of the same

@@ -45,15 +45,18 @@ public class driveForFeet extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.drive.resetEnc(); //need to redo command twice dont think its realizes it reset will fix      
+        //Robot.drive.resetEnc();  
+        Robot.drive.resetVirtualEnc();
         initGyroAngle = Robot.drive.getAngle360();
+        currentAngle = Robot.drive.getAngle() - initGyroAngle;
+        turnOffsetGyro = 0;
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         currentAngle = Robot.drive.getAngle() - initGyroAngle;
-        error = Math.abs(m_ft) - Math.abs(Robot.drive.getFeetMovedFromEnc());
+        error = Math.abs(m_ft) - Math.abs(Robot.drive.getFeetMovedFromVEnc());
         turnOffsetGyro = currentAngle*.015; //should do the trick
         if (m_ft > 0){
             driveVal = -.15-kP*error;
@@ -63,14 +66,17 @@ public class driveForFeet extends Command {
             driveVal = .15+kP*error;
             //Robot.drive.arcade(driveVal, 0,false);
         }
-        Robot.drive.tank(driveVal+turnOffsetGyro, driveVal-turnOffsetGyro,false);
+        Robot.dash.displayData("currentGyroFromDFF", turnOffsetGyro);
+        Robot.dash.displayData("Ft", Robot.drive.getFeetMovedFromVEnc());
+        turnOffsetGyro =0;
+        Robot.drive.tank(driveVal-turnOffsetGyro, driveVal+turnOffsetGyro,false);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished(){
         //doesnt matter what direction if we do it like this
-        return (Math.abs(m_ft) < Math.abs(Robot.drive.getFeetMovedFromEnc()));
+        return (Math.abs(m_ft) < Math.abs(Robot.drive.getFeetMovedFromVEnc()));
     }
 
     // Called once after isFinished returns true
