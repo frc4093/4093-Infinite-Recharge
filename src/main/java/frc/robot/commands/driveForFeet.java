@@ -49,7 +49,7 @@ public class driveForFeet extends Command {
     protected void initialize() {
         //Robot.drive.resetEnc();  
         Robot.drive.resetVirtualEnc();
-        initGyroAngle = Robot.drive.getAngle360();
+        initGyroAngle = Robot.drive.getAngle();
         currentAngle = Robot.drive.getAngle() - initGyroAngle;
         turnOffsetGyro = 0;
     }
