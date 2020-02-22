@@ -149,4 +149,10 @@ controlPanel = new ControlPanel();
     public static boolean getAuto(){
         return isAuto;
     }
+    @Override
+    public void testPeriodic(){
+        Scheduler.getInstance().run();
+        Robot.limelight.setCameraMode(CamMode.DRIVER);
+        Robot.limelight.setLight(LEDMode.ON);
+    }
 }

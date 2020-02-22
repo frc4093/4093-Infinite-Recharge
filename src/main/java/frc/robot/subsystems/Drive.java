@@ -178,6 +178,8 @@ drive.setMaxOutput(1.0);
     public double getEnc(){
          return falconFL.getSelectedSensorPosition();
     }
+    //resetEnc() doesnt always work(unsure why)
+    // simple solution was to create a virtual encoder
     public void resetVirtualEnc(){
         virtualEncOffset = falconFL.getSelectedSensorPosition();
     }
