@@ -42,7 +42,7 @@ public class Run_Indexer extends Command {
     protected void initialize() {
         setTimeout(3); //it shouldnt take too long
         originalPos = Robot.indexer.getpos();
-        newPos = originalPos+6*(2048);
+        newPos = originalPos+(rotations*5)*(2048);
     }
 
     // Called repeatedly when this Command is scheduled to run
