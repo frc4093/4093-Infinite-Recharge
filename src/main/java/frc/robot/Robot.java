@@ -56,6 +56,7 @@ public static ControlPanel controlPanel;
 public static Dash dash = new Dash();
     public int ballCounter = 0; //were not quite here yet but this will be needed
     public static boolean isAuto;
+    public static double roughShotCounter; //this just helps jam code
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -151,8 +152,8 @@ controlPanel = new ControlPanel();
     }
     @Override
     public void testPeriodic(){
-        Scheduler.getInstance().run();
-        Robot.limelight.setCameraMode(CamMode.DRIVER);
-        Robot.limelight.setLight(LEDMode.ON);
+        //Scheduler.getInstance().run();
+        // Robot.limelight.setCameraMode(CamMode.DRIVER);
+        // Robot.limelight.setLight(LEDMode.ON);
     }
 }

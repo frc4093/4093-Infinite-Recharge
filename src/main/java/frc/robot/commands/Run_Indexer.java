@@ -66,6 +66,7 @@ public class Run_Indexer extends Command {
     @Override
     protected void end() {
         Robot.indexer.stop();
+        Robot.roughShotCounter++;
     }
 
     // Called when another command which requires one or more of the same
