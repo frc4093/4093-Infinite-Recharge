@@ -105,6 +105,7 @@ public class Limelight extends Subsystem {
         // Put code here to be run every loop
         if  (targetInSight()){
             Robot.dash.displayData("Distance estimation", getDistance());
+            Robot.dash.displayData("Target Area", getTargetArea());
         }
     }
     
