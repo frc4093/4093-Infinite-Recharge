@@ -528,7 +528,7 @@ Children:
           name: Command
           type: Command
           validators: *id007
-          value: Run_Intake
+          value: AutomatedIntake
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id008
           default: whileHeld
@@ -557,7 +557,7 @@ Children:
           name: Command
           type: Command
           validators: *id007
-          value: Run_Intake
+          value: AutomatedIntake
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id008
           default: whileHeld
@@ -615,7 +615,7 @@ Children:
           name: Command
           type: Command
           validators: *id007
-          value: Run_Indexer
+          value: AutomatedShoot
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id008
           default: whileHeld

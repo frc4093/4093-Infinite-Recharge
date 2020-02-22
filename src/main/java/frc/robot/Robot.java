@@ -108,6 +108,7 @@ controlPanel = new ControlPanel();
     @Override
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
+        Robot.limelight.setLight(LEDMode.OFF);
     }
 
     @Override
@@ -116,6 +117,7 @@ controlPanel = new ControlPanel();
         isAuto = true;
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+        Robot.limelight.setCameraMode(CamMode.DRIVER);
     }
 
     /**
@@ -124,8 +126,6 @@ controlPanel = new ControlPanel();
     @Override
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-        Robot.limelight.setCameraMode(CamMode.DRIVER);
-        Robot.limelight.setLight(LEDMode.OFF);
     }
 
     @Override

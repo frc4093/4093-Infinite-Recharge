@@ -39,7 +39,7 @@ public class Start_Shooter extends Command {
     protected void initialize() {
         //Robot.shooter.setPowerLevel(0);
         Robot.shooter.setRPM(m_RPM);
-        if (Robot.dash.readNumber("RPM force set") !=0){
+        if (Robot.dash.readNumber("RPM force set") >1){
             Robot.shooter.setRPM(Robot.dash.readNumber("RPM force set"));
         }
     }
