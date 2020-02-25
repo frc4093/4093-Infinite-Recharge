@@ -39,22 +39,32 @@ public class Start_Shooter extends Command {
     protected void initialize() {
         //Robot.shooter.setPowerLevel(0);
         Robot.shooter.setRPM(m_RPM);
-        if (Robot.dash.readNumber("RPM force set") >1){
-            Robot.shooter.setRPM(Robot.dash.readNumber("RPM force set"));
-        }
+        // if (Robot.dash.readNumber("RPM force set") >1){
+        //     Robot.shooter.setRPM(Robot.dash.readNumber("RPM force set"));
+        // }
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         //Robot.shooter.setRPM(Robot.dash.readNumber("shoot RPM setter"));
+        Robot.shooter.setRPM(m_RPM);
         Robot.shooter.shootAtRPM();
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
+        Robot.dash.displayData("Goal", m_RPM);
         // if (Robot.shooter.isReady()){
         //     count++;
         // }else{
         //     count = 0;
         // }
+        //for testing at rally
+        if (Robot.oi.operatorGamepad.getPOV() == 0){
+            m_RPM+=10;
+        }else if (Robot.oi.operatorGamepad.getPOV() == 180){
+            m_RPM-=10;
+        }
+        
+        //until we can do by distance
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -68,6 +78,7 @@ public class Start_Shooter extends Command {
     @Override
     protected void end() {
         //Robot.shooter.stop();
+        System.out.println("Shooter ended");
     }
 
     // Called when another command which requires one or more of the same

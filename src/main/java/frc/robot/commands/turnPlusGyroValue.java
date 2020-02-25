@@ -51,13 +51,13 @@ public class turnPlusGyroValue extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        extraSpeed = ((addedAngle-Robot.drive.getAngle())/360)*.5;
+        extraSpeed = ((addedAngle-Robot.drive.getAngle())/360)*.4;
         if (Robot.drive.getAngle() > addedAngle+offset || Robot.drive.getAngle() < addedAngle-offset ){
             count = 0; //reset count
             if (addedAngle>Robot.drive.getAngle()){
-                Robot.drive.arcade(0, .12+extraSpeed,false);
+                Robot.drive.arcade(0, .15+extraSpeed,false);
             }else{
-                Robot.drive.arcade(0, -.12+extraSpeed,false);
+                Robot.drive.arcade(0, -.15+extraSpeed,false);
             }
             
         }else{

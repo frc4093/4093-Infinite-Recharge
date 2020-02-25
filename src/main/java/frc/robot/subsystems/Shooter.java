@@ -104,7 +104,10 @@ shooterFalcon = new WPI_TalonFX(7);
     @Override
     public void periodic() {
         // Put code here to be run every loop
-        Robot.dash.displayData("power", powerLevel);
+        Robot.dash.displayData("recieved", setRPM);
+
+        //limelight distance not ready for rally so can adjust this way
+        
 
     }
 
@@ -169,7 +172,7 @@ shooterFalcon = new WPI_TalonFX(7);
     }
     public boolean isReady(){
         //we need to make sure shooter is spinning before we shoot
-        if ((getShooter_RPM()>setRPM-75 & getShooter_RPM()<setRPM+75) & !(getShooter_RPM()<500)){
+        if ((getShooter_RPM()>setRPM-40 & getShooter_RPM()<setRPM+40) & !(getShooter_RPM()<500)){
             return true;
         }
         return false;

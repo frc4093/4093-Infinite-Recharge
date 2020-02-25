@@ -644,15 +644,15 @@ Children:
           name: Command
           type: Command
           validators: *id007
-          value: ContinuousShot
+          value: Run_Intake
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
-      Name: shootAllB
+      Name: dumbIntakeB
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id009
@@ -1311,6 +1311,53 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
     Name: AutomatedIntake
+  - Children: []
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: []
+        name: Parameter presets
+        validators: null
+        value: []
+      Commands: !!robotbuilder.data.properties.ListProperty
+        default: []
+        name: Commands
+        validators: *id011
+        value: []
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: ReturnToStartGyro
+  - Children: []
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Drive}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id012 []
+        name: Parameter presets
+        validators: null
+        value: *id012
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: tankDrive
   Properties: {}
   Base: Commands
   Name: Commands

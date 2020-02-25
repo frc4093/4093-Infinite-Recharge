@@ -170,6 +170,17 @@ drive.setMaxOutput(1.0);
         }
         return step2; 
     }
+    public double convertTo360(double a){
+        double step1 = a%360;
+        double step2;
+        if (step1<0){
+            step2 = 360+step1; //subtracting value from 360(its negative so technically adding)
+        }else{
+            step2 = step1;
+        }
+        return step2; 
+    }
+
 
     //sort of rough methods for autonomous use
     public void resetEnc(){

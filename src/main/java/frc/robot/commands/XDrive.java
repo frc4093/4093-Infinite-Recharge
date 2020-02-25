@@ -71,7 +71,7 @@ public class XDrive extends Command {
         if (Math.abs(lY)>Math.abs(rY)){
             drive = -lY;
         }else{
-            drive = rY;
+            drive = lY;
         }
         if (Math.abs(lX)>Math.abs(rX)){
             turn = lX;
@@ -91,6 +91,7 @@ public class XDrive extends Command {
         turnDir = turn/Math.abs(turn);
         drivePlusTrigger = drive*(.5+(.5*highTrigger));
         turnPlusTrigger = turn*(.3+(.3*highTrigger));
+        //Robot.drive.tank(Robot.oi.getdriveGamepad().getRawAxis(1),Robot.oi.getdriveGamepad().getRawAxis(1));
         Robot.drive.arcade(drivePlusTrigger, turnPlusTrigger,false); //new more controllable drive(needs testing)
         Robot.dash.displayData("Trigger",highTrigger);
         Robot.dash.displayData("drive Dir", driveDir);
