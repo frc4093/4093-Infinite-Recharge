@@ -126,7 +126,7 @@ shooterFalcon = new WPI_TalonFX(7);
 
     public void shootAtRPM() {
         //Note: too many ifs
-        if (shooterCount<5){
+        if (shooterCount<7){
             shooterCount++;
             return;
         }
@@ -135,11 +135,17 @@ shooterFalcon = new WPI_TalonFX(7);
         double error = currentRPM/setRPM;
         double change = 0;
         double rpmDifferenceAbs = Math.abs(setRPM-currentRPM);
-        if (rpmDifferenceAbs<50){
+        if (rpmDifferenceAbs<5){
             return;
         }
-        if (rpmDifferenceAbs<300){
+        if (rpmDifferenceAbs<50){
+            change = .001;
+        }
+        else if (rpmDifferenceAbs<200){
             change = .005;
+        }
+        else if (rpmDifferenceAbs<300){
+            change = .007;
         }else if (rpmDifferenceAbs<500){
             change = .01;
         }else{
@@ -172,7 +178,13 @@ shooterFalcon = new WPI_TalonFX(7);
     }
     public boolean isReady(){
         //we need to make sure shooter is spinning before we shoot
-        if ((getShooter_RPM()>setRPM-40 & getShooter_RPM()<setRPM+40) & !(getShooter_RPM()<500)){
+        if ((getShooter_RPM()>setRPM-50 & getShooter_RPM()<setRPM+50) & !(getShooter_RPM()<500)){
+            return true;
+        }
+        return false;
+    }
+    public boolean preciseShotReady(){
+        if ((getShooter_RPM()>setRPM-10 & getShooter_RPM()<setRPM+10) & !(getShooter_RPM()<500)){
             return true;
         }
         return false;
