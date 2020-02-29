@@ -10,6 +10,7 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Constants;
 import frc.robot.Robot;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -172,7 +173,6 @@ shooterFalcon = new WPI_TalonFX(7);
     public double getShooter_RPM() {
         return ((shooterFalcon.getSelectedSensorVelocity() * 600) / kSensorUnitsPerRotation); // actual
     }
-
     public void stop() {
         shooterFalcon.set(0);
     }

@@ -10,6 +10,7 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Constants;
 import frc.robot.Robot;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -148,10 +149,16 @@ public class Limelight extends Subsystem {
     }
 
     public double getLimelightRPM(){
-        double rpm = 0;
-        if (getDistance()>closest){
-            
+        double rpm;
+        if (targetInSight()){
+            rpm = Constants.distanceToRPM.getInterpolated(getDistance());
+        }else{
+            rpm = -1;
         }
+        
+        // if (getDistance()>closest){
+        
+        // }
         return rpm;
 
     }

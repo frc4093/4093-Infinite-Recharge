@@ -7,10 +7,15 @@
 
 package frc.robot;
 
+import com.revrobotics.jni.DistanceSensorJNIWrapper;
+
 /**
  * Add your docs here.
  */
 public class Constants {
     public static final int a = 0;
-    
+    public final static InterpolatingTree distanceToRPM = new InterpolatingTree(10);
+    {
+        distanceToRPM.put(0.0,0.0);
+    }
 }
