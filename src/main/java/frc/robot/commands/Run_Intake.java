@@ -52,25 +52,25 @@ public class Run_Intake extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        // if (!jammed){
-             feedSpeed = .2;
-        //     count = 0;
-        // }
+        if (!jammed){
+            feedSpeed = .2;
+            count = 0;
+        }
         // Robot.dash.displayData("RPM intake", Robot.intake.feedWheelRPM());
         Robot.intake.runFeedWheel(feedSpeed);
-        // if (Math.abs(Robot.intake.feedWheelRPM())<2 & /*Math.abs(Robot.intake.getFeedSpeed())>=.3 & */(!jammed) & (count > 20)){
-        //     //uh oh jammed
-        //     feedSpeed = -.2;
-        //     jammedShot = Robot.roughShotCounter;
-        //     jammed = true;
-        //     count = 0;
-        // }
-        // if (jammed & (Robot.roughShotCounter != jammedShot)){
-        //     jammed = false;
-        // }
-        // if (count > 10 && jammed){
-        //     feedSpeed =0;
-        // }
+        if (Math.abs(Robot.intake.feedWheelRPM())<2.0 & /*Math.abs(Robot.intake.getFeedSpeed())>=.3 & */(!jammed) & (count > 10)){
+            //uh oh jammed
+            feedSpeed = -.2;
+            jammedShot = Robot.roughShotCounter;
+            jammed = true;
+            count = 0;
+        }
+        if (jammed & (Robot.roughShotCounter != jammedShot)){
+            jammed = false;
+        }
+        if (count > 10 && jammed){
+            feedSpeed =0;
+        }
         Robot.intake.runIntakeWheels(-.6);
         count++;
         Robot.dash.displayData("Shot counter", Robot.roughShotCounter);
