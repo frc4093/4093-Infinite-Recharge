@@ -71,7 +71,7 @@ public class XDrive extends Command {
         if (Math.abs(lY)>Math.abs(rY)){
             drive = -lY;
         }else{
-            drive = lY;
+            drive = rY;
         }
         if (Math.abs(lX)>Math.abs(rX)){
             turn = lX;

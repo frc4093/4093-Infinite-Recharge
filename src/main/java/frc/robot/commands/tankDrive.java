@@ -57,7 +57,7 @@ public class tankDrive extends Command {
         }else{
             highTrigger = triggerR;
         }
-        Robot.drive.tank(lY*(.5+highTrigger), rY*(.5+highTrigger), false);
+        Robot.drive.tank(rY*(.5+highTrigger), lY*(.5+highTrigger), false);
     }
 
     // Make this return true when this Command no longer needs to run execute()

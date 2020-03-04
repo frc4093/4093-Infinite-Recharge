@@ -50,11 +50,11 @@ public class Run_Indexer extends Command {
     protected void execute() {
         if (Robot.shooter.isReady()){
             Robot.indexer.runUp();
-            Robot.roughShotCounter++;
+            
         }
         
-        Robot.dash.displayData("R", Robot.indexer.getpos());
-        Robot.dash.displayData("RP", Robot.indexer.getpos());
+        // Robot.dash.displayData("R", Robot.indexer.getpos());
+        // Robot.dash.displayData("RP", Robot.indexer.getpos());
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -11,6 +11,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * speed
  * encoder
  * voltage(can display easily from shuffleboard)
+ * 
+ * Stuff that needs to be added
+ * Shuffleboard support
  */
 public class Dash  {
 	private int lastTab;
@@ -26,7 +29,7 @@ public class Dash  {
 	}
 	public void displayData( String key, Boolean value) {
 		SmartDashboard.putBoolean(key, value);
-    }
+	}
 
     //A way to read from dashboard
     public double readNumber(String key){

@@ -14,7 +14,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
- *
+ * Problem: Its currently inefficent but cant seem to fix no matter what I do
+ * good enough for what we will do in autonomous though
  */
 public class TurnToGyroAngle extends Command {
 

@@ -10,7 +10,6 @@
 
 package frc.robot.subsystems;
 
-import frc.robot.Constants;
 import frc.robot.Robot;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -57,7 +56,7 @@ public class Limelight extends Subsystem {
         BLINK(2),
         ON(3);
         private int v;
-        private LEDMode(int mode){
+        private LEDMode(final int mode){
             v = mode;
         }
         public int getMode(){
@@ -69,7 +68,7 @@ public class Limelight extends Subsystem {
         DRIVER(1);
         private int v;
 
-        private CamMode(int mode){
+        private CamMode(final int mode){
             v = mode;
         }
         public int getMode() {
@@ -124,10 +123,10 @@ public class Limelight extends Subsystem {
     public double getTargetArea(){
         return ta.getDouble(0.0); //get target area off network table
     }
-    public void setLight(LEDMode v){
+    public void setLight(final LEDMode v){
         LED.setNumber(v.getMode()); //set LED mode
     }
-    public void setCameraMode(CamMode v){
+    public void setCameraMode(final CamMode v){
         camMode.setNumber(v.getMode()); //set camera mode
     }
     public double getDistance(){
@@ -150,11 +149,18 @@ public class Limelight extends Subsystem {
 
     public double getLimelightRPM(){
         double rpm;
+        double distance = getDistance();
         if (targetInSight()){
-            rpm = Constants.distanceToRPM.getInterpolated(getDistance());
+            if (!(Robot.distanceToRPM.getInterpolated(distance)==null)){
+                rpm = Robot.distanceToRPM.getInterpolated(distance);
+            }else{
+                rpm = 0;
+            }
+                
         }else{
             rpm = -1;
         }
+
         
         // if (getDistance()>closest){
         

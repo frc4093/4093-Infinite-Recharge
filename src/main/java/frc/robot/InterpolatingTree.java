@@ -30,10 +30,12 @@ public class InterpolatingTree extends TreeMap<Double, Double> {
 	
 	public Double getInterpolated(Double x) {
 		Double y = get(x);
+		// System.out.println(x + ","+y);
 		if ( y == null ) {
 			Double topX = ceilingKey(x);
 			Double bottomX = floorKey(x);
-			
+			// System.out.println(topX + " " + bottomX);
+			// System.out.println(size());
 			if ( topX == null && bottomX == null )
 				return null;
 			else if ( topX == null )

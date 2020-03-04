@@ -48,6 +48,6 @@ public class AutomatedIntake extends CommandGroup {
      * at moment im just running intake forever while running indexer until has ball
      */
         addParallel(new Run_Intake());
-        addParallel(new PrepareBallForShoot());
+        addParallel(new indexerFiller()); //fills intake "efficiently"
     } 
 }

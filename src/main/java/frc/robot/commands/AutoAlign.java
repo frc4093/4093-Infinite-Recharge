@@ -53,7 +53,11 @@ public class AutoAlign extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     @Override
-    protected void execute() {        
+    protected void execute() { 
+        if (!Robot.limelight.targetInSight()){
+            Robot.limelight.setCameraMode(CamMode.VISION);
+            Robot.limelight.setLight(LEDMode.ON);
+        }       
         if (Robot.limelight.targetInSight()== true){
 
             x = Robot.limelight.getTargetAngleX();
@@ -76,8 +80,10 @@ public class AutoAlign extends Command {
     }else{
         if (Robot.getAuto()){
             //seek
+            Robot.drive.arcade(0,-.5); // kind of an poor way to find target if were not
         }else{
-            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1)*-.5, Robot.oi.getdriveGamepad().getRawAxis(4)*.3);
+            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1)*.5, 0/*Robot.oi.getdriveGamepad().getRawAxis(4)*.3*/);
+            
         }
             
     }

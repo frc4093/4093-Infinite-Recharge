@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 /**
- *
+ * need to remove
  */
 public class setRumble extends InstantCommand {
 

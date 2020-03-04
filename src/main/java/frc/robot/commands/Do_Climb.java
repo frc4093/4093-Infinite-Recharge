@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
- *
+ * Climb almost ready this will be its command
  */
 public class Do_Climb extends Command {
 
