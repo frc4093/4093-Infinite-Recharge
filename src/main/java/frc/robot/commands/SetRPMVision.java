@@ -51,8 +51,13 @@ public class SetRPMVision extends Command {
         //     Robot.limelight.setCameraMode(CamMode.VISION);
         //     Robot.limelight.setLight(LEDMode.ON);
         // }
-        if (Robot.limelight.getLimelightRPM() != 0)
+        Robot.shooter.powerLevel = .2; //give my fake "PID" loop a bit of a head start
+        if (Robot.limelight.getLimelightRPM() != 0){
             rpm =Robot.limelight.getLimelightRPM();
+        }else{
+            rpm = 3000; //sort of a fail safe
+        }
+            
         
         Robot.shooter.setRPM(rpm);
         Robot.dash.displayData("setRPM",Robot.limelight.getLimelightRPM());

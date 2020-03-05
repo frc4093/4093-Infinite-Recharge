@@ -146,6 +146,8 @@ shooterFalcon = new WPI_TalonFX(7);
             change = .007;
         }else if (rpmDifferenceAbs<500){
             change = .01;
+        }else if (rpmDifferenceAbs<1000){
+            change = .025;
         }else{
             change = .04;
         }

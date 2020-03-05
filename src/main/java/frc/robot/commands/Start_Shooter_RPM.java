@@ -57,6 +57,7 @@ public class Start_Shooter_RPM extends Command {
     protected void execute() {
         //Robot.shooter.setRPM(Robot.dash.readNumber("shoot RPM setter"));
         Robot.shooter.setRPM(m_RPM);
+        
         Robot.shooter.shootAtRPM();
         Robot.dash.displayData("RPM", Robot.shooter.getShooter_RPM());
         Robot.dash.displayData("Goal", m_RPM);
