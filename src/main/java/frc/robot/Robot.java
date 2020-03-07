@@ -118,6 +118,8 @@ lights = new lights();
         chooser.addOption("Target pos", new TargetPosAuto());
         SmartDashboard.putData("Auto mode", chooser);
         Robot.dash.displayData("Pause", 0); //to be flexible for other teams we could maybe pause our autos at start
+        Robot.climb.setLeftEnc(0);
+        Robot.climb.setRightEnc(0);
     }
 
     /**

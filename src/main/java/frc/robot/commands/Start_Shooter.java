@@ -69,7 +69,7 @@ public class Start_Shooter extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false; //(count>5 && m_Quit_When_Stable);
+        return (count>8 && m_Quit_When_Stable);
     }
 
     // Called once after isFinished returns true

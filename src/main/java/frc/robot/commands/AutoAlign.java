@@ -82,8 +82,8 @@ public class AutoAlign extends Command {
             //seek
             Robot.drive.arcade(0,-.5); // kind of an poor way to find target if were not
         }else{
-            Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1)*.5, 0/*Robot.oi.getdriveGamepad().getRawAxis(4)*.3*/);
-            
+            //Robot.drive.arcade(Robot.oi.getdriveGamepad().getRawAxis(1)*.5, 0/*Robot.oi.getdriveGamepad().getRawAxis(4)*.3*/);
+            Robot.drive.tank(Robot.oi.getdriveGamepad().getRawAxis(1)*.7, Robot.oi.getdriveGamepad().getRawAxis(5)*.7, true);
         }
             
     }
