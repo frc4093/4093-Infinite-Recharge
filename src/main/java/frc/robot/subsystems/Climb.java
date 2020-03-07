@@ -85,12 +85,12 @@ rightClimbMotor = new WPI_TalonFX(8);
         leftClimbMotor.set(ControlMode.PercentOutput,speed);
     }
     public void move(double speed){
-        if (!(getLeftEnc() == upEncVal)){
+        if (!(getLeftEnc() >= upEncVal)){
             leftClimbMotor.set(ControlMode.PercentOutput,speed);
         }else{
             leftClimbMotor.set(ControlMode.PercentOutput,0);
         }
-        if (!(getRightEnc() == upEncVal)){
+        if (!(getRightEnc() >= upEncVal)){
             rightClimbMotor.set(ControlMode.PercentOutput,speed);
         }else{
             rightClimbMotor.set(ControlMode.PercentOutput,0);
