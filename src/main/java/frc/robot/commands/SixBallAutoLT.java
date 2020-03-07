@@ -50,13 +50,14 @@ public class SixBallAutoLT extends CommandGroup {
          * then shoot them from trench
          * */
         addSequential(new TargetPosAuto());
-        addParallel(new AutomatedIntake());
-        addSequential(new driveForFeet(18));
+        addParallel(new Run_Intake());
+        addSequential(new driveForFeet(13));
         addSequential(new Stop_Intake());
         addSequential(new driveForFeet(-9.75));
-        addSequential(new Start_Shooter_RPM(4093));
-        addSequential(new UniversalShootAuto());
-        addSequential(new UniversalShootAuto());
-        addSequential(new UniversalShootAuto());
+        addSequential(new Start_Shooter_RPM(3400));
+        addSequential(new PrepareBallForShoot(false));
+        addSequential(new AutomatedShoot());
+        addSequential(new AutomatedShoot());
+        addSequential(new AutomatedShoot());
     } 
 }

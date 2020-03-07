@@ -104,7 +104,7 @@ shooterFalcon = new WPI_TalonFX(7);
     @Override
     public void periodic() {
         // Put code here to be run every loop
-        Robot.dash.displayData("recieved", setRPM);
+        // Robot.dash.displayData("recieved", setRPM);
 
         //limelight distance not ready for rally so can adjust this way
         
@@ -124,7 +124,7 @@ shooterFalcon = new WPI_TalonFX(7);
 
     public void shootAtRPM() {
         //Note: too many ifs
-        if (shooterCount<7){
+        if (shooterCount<8){
             shooterCount++;
             return;
         }

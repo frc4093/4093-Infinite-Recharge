@@ -48,10 +48,10 @@ public class Run_Indexer extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (Robot.shooter.isReady()){
+        //if (Robot.shooter.isReady()){
             Robot.indexer.runUp();
             
-        }
+        //}
         
         // Robot.dash.displayData("R", Robot.indexer.getpos());
         // Robot.dash.displayData("RP", Robot.indexer.getpos());

@@ -47,12 +47,13 @@ public class TargetPosAuto extends CommandGroup {
         //addSequential(new PauseFor(Robot.dash.readNumber("Pause")));
         //kind of a work around to shoot 3 for rally until I figure out a better way
         addParallel(new Start_Shooter_RPM(2910));
+        addSequential(new AutoAlign());
         addSequential(new WaitForShooterSpeed());
-        addSequential(new UniversalShootAuto());
-        addSequential(new WaitForShooterSpeed());
-        addSequential(new UniversalShootAuto());
-        addSequential(new WaitForShooterSpeed());
-        addSequential(new UniversalShootAuto());
+        addSequential(new AutomatedShoot());
+        //addSequential(new WaitForShooterSpeed());
+        addSequential(new AutomatedShoot());
+        //addSequential(new WaitForShooterSpeed());
+        addSequential(new AutomatedShoot());
         addSequential(new TurnToGyroAngle(0));
         //addSequential(new TurnToGyroAngle(0));
         addParallel(new StopShooter());

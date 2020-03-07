@@ -68,8 +68,8 @@ public class driveForFeet extends Command {
             driveVal = .15+kP*error;
             //Robot.drive.arcade(driveVal, 0,false);
         }
-        Robot.dash.displayData("currentGyroFromDFF", turnOffsetGyro);
-        Robot.dash.displayData("Ft", Robot.drive.getFeetMovedFromVEnc());
+        // Robot.dash.displayData("currentGyroFromDFF", turnOffsetGyro);
+        // Robot.dash.displayData("Ft", Robot.drive.getFeetMovedFromVEnc());
         //for safe testing
         if (Math.abs(turnPower)>.5)
             turnPower = 0;
