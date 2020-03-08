@@ -60,7 +60,7 @@ public static Dash dash = new Dash();
     public static boolean isAuto;
     public static double roughShotCounter; //this just helps jam code
     public final static InterpolatingTree distanceToRPM = new InterpolatingTree(40);
-    public final static double rpmDistanceOffset = -20;
+    public final static double rpmDistanceOffset = 0;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -96,7 +96,8 @@ lights = new lights();
         distanceToRPM.put(140.0,2930.0+rpmDistanceOffset);
         distanceToRPM.put(178.0,3100.0+rpmDistanceOffset); //3152 3030
         distanceToRPM.put(203.0,3080.0+rpmDistanceOffset);
-        distanceToRPM.put(244.0,3400.0+rpmDistanceOffset);
+        distanceToRPM.put(234.0,3500+rpmDistanceOffset);
+        distanceToRPM.put(244.0,3550.0+rpmDistanceOffset);
         distanceToRPM.put(286.0, 3640.0+rpmDistanceOffset);
         
         // OI must be constructed after subsystems. If the OI creates Commands
@@ -144,6 +145,7 @@ lights = new lights();
     public void autonomousInit() {
         autonomousCommand = chooser.getSelected();
         isAuto = true;
+        drive.resetGyro();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }

@@ -68,16 +68,16 @@ public class XDrive extends Command {
         }else{
             highTrigger = triggerR;
         }
-        if (Math.abs(lY)>Math.abs(rY)){
+        //if (Math.abs(lY)>Math.abs(rY)){
             drive = lY;
-        }else{
-            drive = -rY;
-        }
-        if (Math.abs(lX)>Math.abs(rX)){
-            turn = lX;
-        }else{
+        //}else{
+            //drive = -rY;
+        //}
+        //if (Math.abs(lX)>Math.abs(rX)){
+            //turn = lX;
+        //}else{
             turn = rX;
-        }
+        //}
         
 
         // if (Robot.oi.getdriveGamepad().getRawButton(5) || Robot.oi.getdriveGamepad().getRawButton(6)){

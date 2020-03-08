@@ -56,7 +56,7 @@ public class SetRPMVision extends Command {
         if (Robot.limelight.targetInSight()){
             rpm =Robot.limelight.getLimelightRPM();
         }else{
-            rpm = 3000;
+            rpm = 2920; //10 ft line value so that if it fails simple to find
         }
         Robot.shooter.setRPM(rpm);
         

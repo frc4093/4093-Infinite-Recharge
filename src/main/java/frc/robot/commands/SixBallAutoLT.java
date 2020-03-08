@@ -49,14 +49,32 @@ public class SixBallAutoLT extends CommandGroup {
          * then grab 3 from trench
          * then shoot them from trench
          * */
-        addSequential(new TargetPosAuto());
-        addParallel(new Run_Intake());
-        addSequential(new driveForFeet(13));
-        addSequential(new Stop_Intake());
-        addSequential(new driveForFeet(-9.75));
-        addSequential(new Start_Shooter_RPM(3400));
+
         addSequential(new PrepareBallForShoot(false));
+        addParallel(new SetRPMVision());
+        addParallel(new Start_Shooter(true));
+        addSequential(new AutoAlign());
+        addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
+        addSequential(new AutomatedShoot());
+        addSequential(new AutomatedShoot());
+        addSequential(new TurnToGyroAngle(0));
+        addParallel(new Run_Intake());
+        // addSequential(new DriveQuick(-.7,.5));
+        // addSequential(new PauseFor(.5));
+        addSequential(new driveForFeet(16.5,.48));
+        addSequential(new PauseFor(.25));
+        //addSequential(new Stop_Intake());
+        addSequential(new driveForFeet(-15,.9));
+        //addParallel(new Start_Shooter_RPM(3100));
+        addParallel(new SetRPMVision());
+        addParallel(new Start_Shooter(true));
+        addSequential(new AutoAlign());
+        addSequential(new WaitForShooterSpeed());
+        addSequential(new PrepareBallForShoot(false));
+        //addParallel(new Run_Intake());
+        addSequential(new AutomatedShoot());
+        addSequential(new Stop_Intake()); //so they fall if jammed
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
     } 
