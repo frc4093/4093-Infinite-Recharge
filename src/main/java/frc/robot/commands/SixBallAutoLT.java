@@ -61,11 +61,12 @@ public class SixBallAutoLT extends CommandGroup {
         addSequential(new TurnToGyroAngle(0));
         addParallel(new Run_Intake());
         addSequential(new DriveQuick(-.7,.5));
-        addSequential(new PauseFor(.25));
-        addSequential(new driveForFeet(16.5,.45));
+        addSequential(new PauseFor(.3));
+        addSequential(new driveForFeet(16,.7));
         addSequential(new PauseFor(.25));
         //addSequential(new Stop_Intake());
-        addSequential(new driveForFeet(-15,.9));
+        addParallel(new PrepareBallForShoot(false));
+        addSequential(new driveForFeet(-15,1));
         //addParallel(new Start_Shooter_RPM(3100));
         addParallel(new SetRPMVision());
         addParallel(new Start_Shooter(true));
@@ -73,8 +74,8 @@ public class SixBallAutoLT extends CommandGroup {
         addSequential(new WaitForShooterSpeed());
         addSequential(new PrepareBallForShoot(false));
         //addParallel(new Run_Intake());
+        addParallel(new Stop_Intake()); //so they fall if jammed
         addSequential(new AutomatedShoot());
-        addSequential(new Stop_Intake()); //so they fall if jammed
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
     } 

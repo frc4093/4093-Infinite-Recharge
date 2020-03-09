@@ -86,6 +86,9 @@ lights = new lights();
         // distanceToRPM.put(137.0,2950.0);
         // distanceToRPM.put(238.0,3200.0);
         //Redone 3/3/2020
+
+        // So these worked on somewhat ok condition not so accurate(shoots high) on beat up ones
+        
         distanceToRPM.put(47.0,0.0); //cant shoot
         distanceToRPM.put(54.999,0.0+rpmDistanceOffset);
         distanceToRPM.put(55.0, 4400.0+rpmDistanceOffset); //safe mininum
