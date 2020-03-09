@@ -89,7 +89,7 @@ addChild("break_Beam",break_Beam);
     public void periodic() {
         // Put code here to be run every loop
         Robot.dash.displayData("distance sensor intake", getDistance(Unit.kMillimeters));
-        // Robot.dash.displayData("BreakBeam", break_Beam.get());
+        Robot.dash.displayData("BreakBeam", break_Beam.get());
     }
 
     public void runUp(){

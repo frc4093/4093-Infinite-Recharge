@@ -117,6 +117,7 @@ lights = new lights();
         chooser.addOption("Pass line 5 Point", new passAutoLine());
         chooser.addOption("Six Ball LT", new SixBallAutoLT());
         chooser.addOption("Target pos", new TargetPosAuto());
+        chooser.addOption("Rendezvous", new SixBallAutoRendezvous());
         SmartDashboard.putData("Auto mode", chooser);
         Robot.dash.displayData("Pause", 0); //to be flexible for other teams we could maybe pause our autos at start
         Robot.climb.setLeftEnc(0);

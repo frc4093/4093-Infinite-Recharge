@@ -60,9 +60,9 @@ public class SixBallAutoLT extends CommandGroup {
         addSequential(new AutomatedShoot());
         addSequential(new TurnToGyroAngle(0));
         addParallel(new Run_Intake());
-        // addSequential(new DriveQuick(-.7,.5));
-        // addSequential(new PauseFor(.5));
-        addSequential(new driveForFeet(16.5,.48));
+        addSequential(new DriveQuick(-.7,.5));
+        addSequential(new PauseFor(.25));
+        addSequential(new driveForFeet(16.5,.45));
         addSequential(new PauseFor(.25));
         //addSequential(new Stop_Intake());
         addSequential(new driveForFeet(-15,.9));
