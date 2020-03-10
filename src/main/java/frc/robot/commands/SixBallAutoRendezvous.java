@@ -46,20 +46,25 @@ public class SixBallAutoRendezvous extends CommandGroup {
         addSequential(new PrepareBallForShoot(false));
         addParallel(new SetRPMVision());
         addParallel(new Start_Shooter(true));
-        addSequential(new AutoAlign());
+        addParallel(new Run_Intake(.3));
+        addSequential(new AutoAlign(1));
         addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
-        addParallel(new Run_Intake());
         addSequential(new TurnToGyroAngle(0));
         addSequential(new DriveQuick(-.7,.5)); //this is actually forward
         addSequential(new PauseFor(.3));
-        addSequential(new driveForFeet(7.5,.4));
-        addSequential(new PauseFor(.25));
+        addSequential(new driveForFeet(4,.5));
+        addSequential(new driveForFeet(1.2,.15));
+        addSequential(new TurnToGyroAngle(40));
+        addSequential(new driveForFeet(.5,.3));
+        addSequential(new TurnToGyroAngle(0));
+        //addSequential(new PauseFor(.25));
         addParallel(new Stop_Intake()); //so they fall if jammed
-        addSequential(new driveForFeet(-8,.8));
-        addSequential(new AutoAlign());
+        addSequential(new driveForFeet(-5.5,.8));
+        addSequential(new AutoAlign(1));
+        addParallel(new Run_Intake(.3));
         addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());

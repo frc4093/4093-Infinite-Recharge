@@ -57,13 +57,13 @@ public class Start_Shooter extends Command {
             count = 0;
         }
         //these will be properly mapped
-        if (Robot.oi.operatorGamepad.getPOV() == 0){
-            Robot.shooter.setRPM(Robot.shooter.getSetRPM()+10);
-            //m_RPM+=10;
-        }else if (Robot.oi.operatorGamepad.getPOV() == 180){
-            //m_RPM-=10;
-            Robot.shooter.setRPM(Robot.shooter.getSetRPM()-10);
-        }
+        // if (Robot.oi.operatorGamepad.getPOV() == 0){
+        //     Robot.shooter.setRPM(Robot.shooter.getSetRPM()+10);
+        //     //m_RPM+=10;
+        // }else if (Robot.oi.operatorGamepad.getPOV() == 180){
+        //     //m_RPM-=10;
+        //     Robot.shooter.setRPM(Robot.shooter.getSetRPM()-10);
+        // }
     }
 
     // Make this return true when this Command no longer needs to run execute()

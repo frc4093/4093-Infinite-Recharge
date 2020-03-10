@@ -48,25 +48,25 @@ public class SixBallAutoLT extends CommandGroup {
          * this will shoot 3 balls
          * then grab 3 from trench
          * then shoot them from trench
-         * */
+         **/
 
         addSequential(new PrepareBallForShoot(false));
         addParallel(new SetRPMVision());
         addParallel(new Start_Shooter(true));
+        addParallel(new Run_Intake(.9));
         addSequential(new AutoAlign());
         addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
         addSequential(new TurnToGyroAngle(0));
-        addParallel(new Run_Intake());
-        addSequential(new DriveQuick(-.7,.5));
+        addSequential(new DriveQuick(-1,.5));
         addSequential(new PauseFor(.3));
-        addSequential(new driveForFeet(16,.7));
+        addSequential(new driveForFeet(13,.5));
         addSequential(new PauseFor(.25));
         //addSequential(new Stop_Intake());
         addParallel(new PrepareBallForShoot(false));
-        addSequential(new driveForFeet(-15,1));
+        addSequential(new driveForFeet(-12,1));
         //addParallel(new Start_Shooter_RPM(3100));
         addParallel(new SetRPMVision());
         addParallel(new Start_Shooter(true));

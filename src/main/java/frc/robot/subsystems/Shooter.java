@@ -124,7 +124,7 @@ shooterFalcon = new WPI_TalonFX(7);
 
     public void shootAtRPM() {
         //Note: too many ifs
-        if (shooterCount<5){
+        if (shooterCount<7){
             shooterCount++;
             return;
         }
