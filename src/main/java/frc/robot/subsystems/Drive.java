@@ -87,7 +87,7 @@ falconBR.follow(falconFR);
         
 drive = new DifferentialDrive(falconFL, falconFR);
 addChild("drive",drive);
-drive.setSafetyEnabled(false);
+drive.setSafetyEnabled(true);
 drive.setExpiration(0.1);
 drive.setMaxOutput(1.0);
 
