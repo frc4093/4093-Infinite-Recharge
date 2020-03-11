@@ -40,7 +40,8 @@ public class Dash  {
     }
     public String readString(String key){
         return SmartDashboard.getString(key,"Default");
-    }
+	}
+	
 	public void updateDashBoard(){
 		//nothing needed this year
 	}

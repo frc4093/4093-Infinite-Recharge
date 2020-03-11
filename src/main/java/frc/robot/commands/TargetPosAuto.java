@@ -52,12 +52,16 @@ public class TargetPosAuto extends CommandGroup {
         addSequential(new AutoAlign());
         addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
+        addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
+        addSequential(new WaitForShooterSpeed());
         addSequential(new AutomatedShoot());
         addSequential(new TurnToGyroAngle(0));
         addParallel(new StopShooter());
         addSequential(new passAutoLine());
-       
+       //update 3/11/2020 we could afford to 
+       //slow down and if it increases chances of getting in inner port
+       //
 
         
 

@@ -8,11 +8,11 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package frc.robot;
 
 import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
+import edu.wpi.first.networktables.NetworkTableInstance;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
@@ -125,6 +125,8 @@ lights = new lights();
         Robot.dash.displayData("Pause", 0); //to be flexible for other teams we could maybe pause our autos at start
         Robot.climb.setLeftEnc(0);
         Robot.climb.setRightEnc(0);
+        NetworkTableInstance.getDefault().getTable("limelight").getEntry("stream").setNumber(2);
+
     }
 
     /**
