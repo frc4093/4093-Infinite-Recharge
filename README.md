@@ -6,4 +6,5 @@ FRC Team 4093's code for the 2020 FRC game Infinite Recharge.
 https://frc4093.com/
 
 Notes:
-Six ball rendezvous not working too well
+Six ball rendezvous not working too well (lowest 3 highest 5 in testing) Other autonomouses working great
+Switched powercell shooter to not constantly adjust after each shot actually makes it work better.
