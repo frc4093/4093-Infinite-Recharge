@@ -49,24 +49,24 @@ public class SixBallAutoLT extends CommandGroup {
          * then grab 3 from trench
          * then shoot them from trench
          **/
-
-        addSequential(new PrepareBallForShoot(false));
+        addParallel(new PrepareBallForShoot(false));
         addParallel(new SetRPMVision());
         addParallel(new Start_Shooter(true));
-        addParallel(new Run_Intake(.9));
+        addParallel(new Run_Intake(.8));
         addSequential(new AutoAlign());
-        addSequential(new WaitForShooterSpeed());
+        //addSequential(new WaitForShooterSpeed()); //obsolete?
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
         addSequential(new TurnToGyroAngle(0));
-        addSequential(new DriveQuick(-1,.5));
+        addSequential(new DriveQuick(-.3,.5));
         addSequential(new PauseFor(.3));
-        addSequential(new driveForFeet(13,.6));
+        addSequential(new driveForFeet(15,.55));
+        //addSequential(new driveForFeet(1, .4));
         addSequential(new PauseFor(.25));
         //addSequential(new Stop_Intake());
         addParallel(new PrepareBallForShoot(false));
-        addSequential(new driveForFeet(-12,1));
+        addSequential(new driveForFeet(-14.5,1));
         //addParallel(new Start_Shooter_RPM(3100));
         addParallel(new SetRPMVision());
         addParallel(new Start_Shooter(true));
@@ -74,8 +74,9 @@ public class SixBallAutoLT extends CommandGroup {
         addSequential(new WaitForShooterSpeed());
         addSequential(new PrepareBallForShoot(false));
         //addParallel(new Run_Intake());
-        addParallel(new Stop_Intake()); //so they fall if jammed
+        addParallel(new Stop_Intake()); //so they fall if jammed(jam detection works not but probably just leave this to be safe)
         addSequential(new AutomatedShoot());
+        addParallel(new Run_Intake());
         addSequential(new AutomatedShoot());
         addSequential(new AutomatedShoot());
     } 

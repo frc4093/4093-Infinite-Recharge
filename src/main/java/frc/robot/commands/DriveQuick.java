@@ -46,7 +46,7 @@ public class DriveQuick extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.drive.arcade(m_speed, 0);
+        Robot.drive.arcade(m_speed, 0,false);
     }
 
     // Make this return true when this Command no longer needs to run execute()
