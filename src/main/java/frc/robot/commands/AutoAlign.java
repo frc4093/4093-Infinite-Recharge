@@ -73,9 +73,9 @@ public class AutoAlign extends Command {
             if (absX>.8){
                 if (x > 0){
                     //System.out.println(.32+adjust);
-                    Robot.drive.arcade(y, .12+adjust,false);
+                    Robot.drive.arcade(y, .14+adjust,false);
                 }else if(x < 0){
-                    Robot.drive.arcade(y, -.12+adjust,false);
+                    Robot.drive.arcade(y, -.14+adjust,false);
                     //System.out.println(-.32+adjust);
                 }
         }else{
