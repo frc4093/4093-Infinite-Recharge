@@ -12,9 +12,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import frc.robot.Robot;
-import frc.robot.subsystems.*;
-
 /**
  * run a few commands so driver doesnt have to to create a one-button shoot
  */

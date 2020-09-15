@@ -23,7 +23,9 @@ import edu.wpi.first.wpilibj.PIDSource;
 
 
 /**
- *
+ * We were going to have lights
+ * But we dont yet will probably eventually 
+ * add something offseason
  */
 public class lights extends Subsystem {
 
